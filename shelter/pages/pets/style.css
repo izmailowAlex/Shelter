@@ -347,6 +347,10 @@ h3 {
   gap: 20px;
 }
 
+.item-ft-row__link {
+  text-decoration: none;
+}
+
 .item-ft-img {
   width: 40px;
   height: 32px;
