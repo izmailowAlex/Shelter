@@ -63,17 +63,22 @@ h3 {
 /* -------  Header  --------------------- */
 
 .header {
+  width: 100vw;
+  background-image: url(./../../assets/images/start-screen-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-container {
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 30px;
   width: 100%;
   max-width: 1280px;
-  position: fixed;
-  top: 0;
-  left: calc(50% - 640px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  z-index: 10;
 }
 
 .header-logo-link {
@@ -139,7 +144,7 @@ h3 {
 
 .preview {
   width: 100vw;
-  height: 908px;
+  height: 818px;
   background-image: url(./../../assets/images/start-screen-background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -311,8 +316,7 @@ h3 {
 .carousel-list {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 90px;
+  justify-content: space-evenly;
 }
 
 .carousel__card {
