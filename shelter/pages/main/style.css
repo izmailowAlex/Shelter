@@ -1,11 +1,11 @@
 :root {
   --white: #ffffff;
-  --light-s: #F1CDB3;
-  --light-i: #F6F6F6;
-  --dark-s: #CDCDCD;
+  --light-s: #f1cdb3;
+  --light-i: #f6f6f6;
+  --dark-s: #cdcdcd;
   --dark: #292929;
   --dark-i: #545454;
-  --dark-m: #B2B2B2;
+  --dark-m: #b2b2b2;
   --dark-3xl: #292929;
 }
 
@@ -24,7 +24,7 @@ h3 {
   font-size: 35px;
   font-weight: 100;
   line-height: 45.5px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.09em;
   color: var(--dark-i);
 }
 
@@ -42,6 +42,7 @@ h3 {
   padding: 15px 0;
   font-size: 17px;
   line-height: 22.1px;
+  letter-spacing: 0.09em;
   color: var(--dark-3xl);
   display: flex;
   justify-content: center;
@@ -64,6 +65,7 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  cursor: pointer;
 }
 
 .logo-up {
@@ -122,7 +124,11 @@ h3 {
 .preview {
   width: 100vw;
   height: 908px;
-  background-image: url(./../../assets/images/start-screen-background.jpg);filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-image: url(./../../assets/images/start-screen-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+    drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   position: relative;
 }
 
@@ -140,7 +146,7 @@ h3 {
   font-size: 44px;
   font-weight: 100;
   line-height: 57.2px;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.04em;
 }
 
 .preview__text {
@@ -151,7 +157,6 @@ h3 {
 }
 
 .preview__btn {
-  padding: 15px 45px;
   width: 207px;
   border-radius: 100px;
   background-color: var(--light-s);
@@ -168,6 +173,7 @@ h3 {
   width: 698px;
   height: 728px;
   background-image: url(./../../assets/images/start-screen-puppy.svg);
+  background-repeat: no-repeat;
   position: absolute;
   right: 40px;
   bottom: 0;
@@ -189,9 +195,11 @@ h3 {
   width: 300px;
   height: 408px;
   background-image: url(./../../assets/images/about-pets.svg);
+  background-repeat: no-repeat;
 }
 
 .about-description {
+  width: 34%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -270,7 +278,7 @@ h3 {
 
 .carousel__card {
   cursor: pointer;
-  background: #FAFAFA;
+  background: #fafafa;
   border-radius: 9px;
   padding-bottom: 30px;
 }
@@ -283,7 +291,6 @@ h3 {
 }
 
 .card-img {
-
 }
 
 .card-img__image {
@@ -307,6 +314,7 @@ h3 {
   font-size: 20px;
   font-weight: 100;
   line-height: 22.72px;
+  letter-spacing: 0.09em;
   color: var(--dark-i);
 }
 
@@ -315,6 +323,10 @@ h3 {
   border: 2px solid var(--light-s);
   border-radius: 100px;
   margin: auto;
+}
+
+.card-btn__link {
+  padding: 13px 0;
 }
 
 .pets-btn {
@@ -334,22 +346,22 @@ h3 {
 }
 
 .help__title {
-  width: 300px;
+  width: 310px;
   margin-bottom: 60px;
 }
 
 .help-contain {
-  width: 1026px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .help-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 120px;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-self: center;
+  row-gap: 53px;
+  column-gap: 122px;
 }
 
 .help-item {
@@ -407,6 +419,7 @@ h3 {
 .item__title {
   font-size: 20px;
   line-height: 23px;
+  letter-spacing: 0.09em;
   color: var(--dark-i);
 }
 
@@ -420,19 +433,24 @@ h3 {
   background: var(--light-i);
 }
 
-.donation-screen {}
-
 .donation-screen__img {
   margin: auto;
   width: 505px;
   height: 261px;
   background-image: url(./../../assets/images/donation-dog.svg);
+  background-repeat: no-repeat;
 }
 
 .donation-description {
+  width: 29.5%;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.donation__title {
+  width: 310px;
+  letter-spacing: 3.6px;
 }
 
 .donation-btn {
@@ -450,23 +468,27 @@ h3 {
   height: 23px;
   display: flex;
   background-image: url(./../../assets/images/credit-card.svg);
+  background-repeat: no-repeat;
 }
 
 .credit-card__num {
   font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.112em;
   color: var(--dark-i);
 }
 
 .donate-text_1 {
-  font-size: 15px;
   line-height: 16.5px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
 }
 
 .donate-text_2 {
-  width: 410px;
+  width: 360px;
+  font-size: 12px;
+  line-height: 18px;
   font-style: italic;
-  font-style: 12px;
+  letter-spacing: 0.036em;
   color: var(--dark-m);
 }
 
@@ -475,14 +497,18 @@ h3 {
 .footer {
   padding-top: 56px;
   padding-bottom: 60px;
-  background-image: url(./../../assets/images/start-screen-background.jpg);filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-image: url(./../../assets/images/start-screen-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+    drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   position: relative;
 }
 
 .footer-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 160px;
+  grid-gap: 120px;
 }
 
 .item-ft {
@@ -493,7 +519,8 @@ h3 {
 }
 
 .item-ft__title {
-  width: 270px;
+  width: 282px;
+  letter-spacing: 0.1em;
   color: var(--white);
 }
 
@@ -525,7 +552,7 @@ h3 {
 .item-ft-text {
   font-size: 20px;
   line-height: 23px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   color: var(--light-s);
 }
 
@@ -542,6 +569,8 @@ h3 {
   width: 300px;
   height: 310px;
   background-image: url(./../../assets/images/footer-puppy.svg);
+  background-repeat: no-repeat;
   position: absolute;
+  right: 40px;
   bottom: 0;
 }
