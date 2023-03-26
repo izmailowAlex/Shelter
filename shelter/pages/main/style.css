@@ -9,6 +9,7 @@
   --dark-i: #545454;
   --dark-m: #b2b2b2;
   --dark-3xl: #292929;
+  scroll-behavior: smooth;
 }
 
 * {
