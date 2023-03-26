@@ -29,6 +29,11 @@ h3 {
   padding: 0 40px;
 }
 
+.container-block {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
 .btn__link {
   text-decoration: none;
   padding: 15px 0;
@@ -168,13 +173,12 @@ h3 {
 /* -------  About  --------------------- */
 
 .about {
-  padding: 80px 175px 100px 175px;
   display: flex;
+  justify-content: center;
   gap: 120px;
 }
 
 .about-screen {
-  width: 50%;
 }
 
 .about-screen__img {
@@ -213,8 +217,6 @@ h3 {
 /* -------  Pets  --------------------- */
 
 .pets {
-  padding-top: 80px;
-  padding-bottom: 100px;
   text-align: center;
   background: #F6F6F6;
   display: flex;
@@ -226,7 +228,6 @@ h3 {
 }
 
 .carousel {
-  
   position: relative;
 }
 
@@ -252,7 +253,6 @@ h3 {
 }
 
 .carousel-wrapper {
-
 }
 
 .carousel-list {
@@ -316,4 +316,90 @@ h3 {
   border-radius: 100px;
   background: var(--light-s);
   margin: auto;
+}
+
+/* -------  Help  --------------------- */
+
+.help {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.help__title {
+  width: 300px;
+  margin-bottom: 60px;
+}
+
+.help-contain {
+  width: 1026px;
+  margin: 0 auto;
+}
+
+.help-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 120px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.help-item {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.item-img {
+  display: flex;
+  margin: 0 auto;
+}
+
+.item-img__image {
+  width: 60px;
+  height: 60px;
+}
+
+.item-image-1 {
+  background-image: url(./../../assets/images/icon-pet-food.svg);
+}
+
+.item-image-2 {
+  background-image: url(./../../assets/images/icon-transportation.svg);
+}
+
+.item-image-3 {
+  background-image: url(./../../assets/images/icon-toys.svg);
+}
+
+.item-image-4 {
+  background-image: url(./../../assets/images/icon-bowls-and-cups.svg);
+}
+
+.item-image-5 {
+  background-image: url(./../../assets/images/icon-shampoos.svg);
+}
+
+.item-image-6 {
+  background-image: url(./../../assets/images/icon-vitamins.svg);
+}
+
+.item-image-7 {
+  background-image: url(./../../assets/images/icon-medicines.svg);
+}
+
+.item-image-8 {
+  background-image: url(./../../assets/images/icon-collars-leashes.svg);
+}
+
+.item-image-9 {
+  background-image: url(./../../assets/images/icon-sleeping-area.svg);
+}
+
+.item__title {
+  font-size: 20px;
+  line-height: 23px;
+  color: var(--dark-i);
 }
