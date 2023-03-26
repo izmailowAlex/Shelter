@@ -1,8 +1,10 @@
 :root {
   --white: #ffffff;
-  --light-s: #f1cdb3;
-  --dark-s: #cdcdcd;
+  --light-s: #F1CDB3;
+  --dark-s: #CDCDCD;
   --dark: #292929;
+  --dark-i: #545454;
+  --dark-3xl: #292929;
 }
 
 * {
@@ -13,17 +15,34 @@
 
 body {
   font-size: 1em;
-  font-weight: 400;
   color: var(--white);
 }
 
+h3 {
+  font-size: 35px;
+  font-weight: 100;
+  line-height: 45.5px;
+  color: var(--dark-i);
+}
+
 .container {
-  padding: 30px 40px;
+  padding: 0 40px;
+}
+
+.btn__link {
+  text-decoration: none;
+  padding: 15px 0;
+  font-size: 17px;
+  line-height: 22.1px;
+  color: var(--dark-3xl);
+  display: flex;
+  justify-content: center;
 }
 
 /* -------  Header  --------------------- */
 
 .header {
+  padding-top: 30px;
   width: 100%;
   position: fixed;
   display: flex;
@@ -37,7 +56,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  cursor: pointer;
 }
 
 .logo-up {
@@ -96,9 +114,7 @@ body {
 .preview {
   width: 100vw;
   height: 908px;
-  background-image: url(./../../assets/images/start-screen-background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url(./../../assets/images/start-screen-background.jpg);filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   position: relative;
 }
 
@@ -144,8 +160,52 @@ body {
   width: 698px;
   height: 728px;
   background-image: url(./../../assets/images/start-screen-puppy.svg);
-  background-repeat: no-repeat;
   position: absolute;
   right: 40px;
   bottom: 0;
+}
+
+/* -------  About  --------------------- */
+
+.about {
+  padding: 80px 175px 100px 175px;
+  display: flex;
+  gap: 120px;
+}
+
+.about-screen {
+  width: 50%;
+}
+
+.about-screen__img {
+  margin: auto;
+  width: 300px;
+  height: 408px;
+  background-image: url(./../../assets/images/about-pets.svg);
+}
+
+.about-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+}
+
+.description__title {
+  width: 250px;
+  color: var(--dark-i);
+}
+
+.description__text {
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--dark-i);
+}
+
+.text_1 {
+  width: 400px;
+}
+
+.text_2 {
+  width: 389px;
 }
