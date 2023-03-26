@@ -1,7 +1,9 @@
 :root {
   --white: #ffffff;
-  --light-s: #f1cdb3;
+  --primary: #f1cdb3;
+  --primary-light: #FDDCC4;
   --light-i: #f6f6f6;
+  --light-s: #FAFAFA;
   --dark-s: #cdcdcd;
   --dark: #292929;
   --dark-i: #545454;
@@ -46,6 +48,7 @@ h3 {
   color: var(--dark-3xl);
   display: flex;
   justify-content: center;
+  transition: all .3s ease-in-out;
 }
 
 /* -------  Header  --------------------- */
@@ -106,13 +109,17 @@ h3 {
 }
 
 .active {
-  border-bottom: 3px solid var(--light-s);
+  border-bottom: 3px solid var(--primary);
+}
+
+.nav-item.active .nav-item__link {
+  color: var(--dark-i);
 }
 
 @media (hover: hover) {
 
   .nav-item__link:hover {
-    color: var(--white);
+    color: var(--dark-3xl);
   }
 
 }
@@ -154,9 +161,10 @@ h3 {
 
 .carousel__card {
   cursor: pointer;
-  background: #fafafa;
+  background: var(--light-s);
   border-radius: 9px;
   padding-bottom: 30px;
+  transition: all .3s ease-in-out;
 }
 
 .card-wrapper {
@@ -213,9 +221,10 @@ h3 {
 
 .card-btn {
   width: 187px;
-  border: 2px solid var(--light-s);
+  border: 2px solid var(--primary);
   border-radius: 100px;
   margin: auto;
+  transition: all .3s ease-in-out;
 }
 
 .card-btn__link {
@@ -240,7 +249,7 @@ h3 {
 }
 
 .navigation-btn-right {
-  border: 2px solid var(--light-s);
+  border: 2px solid var(--primary);
 }
 
 .btn-center {
@@ -251,7 +260,7 @@ h3 {
   align-items: center;
   display: flex;
   color: var(--dark-3xl);
-  background: var(--light-s);
+  background: var(--primary);
 }
 
 .navigation-btn__image {
@@ -276,6 +285,23 @@ h3 {
 
 .db-arrow-right {
   background-image: url(./../../assets/images/db_arrow_right.svg);
+}
+
+@media (hover: hover) {
+
+  .carousel__card:hover {
+    background: var(--white);
+  }
+
+  .carousel__card:hover .card-btn {
+    border: 2px solid var(--primary-light);
+    background: var(--primary-light);
+  }
+
+  .navigation-btn:hover {
+    background: var(--primary-light);
+  }
+
 }
 
 /* -------  Footer  --------------------- */
@@ -340,7 +366,7 @@ h3 {
   font-size: 20px;
   line-height: 23px;
   letter-spacing: 0.1em;
-  color: var(--light-s);
+  color: var(--primary);
 }
 
 .text-wrap {
