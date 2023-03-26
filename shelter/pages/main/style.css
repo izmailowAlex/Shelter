@@ -1,9 +1,11 @@
 :root {
   --white: #ffffff;
   --light-s: #F1CDB3;
+  --light-i: #F6F6F6;
   --dark-s: #CDCDCD;
   --dark: #292929;
   --dark-i: #545454;
+  --dark-m: #B2B2B2;
   --dark-3xl: #292929;
 }
 
@@ -22,6 +24,7 @@ h3 {
   font-size: 35px;
   font-weight: 100;
   line-height: 45.5px;
+  letter-spacing: 0.06em;
   color: var(--dark-i);
 }
 
@@ -196,7 +199,7 @@ h3 {
 }
 
 .description__title {
-  width: 250px;
+  width: 300px;
   color: var(--dark-i);
 }
 
@@ -218,13 +221,16 @@ h3 {
 
 .pets {
   text-align: center;
-  background: #F6F6F6;
+  background: var(--light-i);
   display: flex;
   flex-direction: column;
   gap: 60px;
 }
 
 .pets__title {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .carousel {
@@ -402,4 +408,64 @@ h3 {
   font-size: 20px;
   line-height: 23px;
   color: var(--dark-i);
+}
+
+/* -------  Donatation  --------------------- */
+
+.donation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background: var(--light-i);
+}
+
+.donation-screen {}
+
+.donation-screen__img {
+  margin: auto;
+  width: 505px;
+  height: 261px;
+  background-image: url(./../../assets/images/donation-dog.svg);
+}
+
+.donation-description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.donation-btn {
+  padding: 10px 15px;
+  width: 349px;
+  display: flex;
+  gap: 15px;
+  line-height: 23px;
+  background: var(--light-s);
+  border-radius: 9px;
+}
+
+.credit-card__img {
+  width: 30px;
+  height: 23px;
+  display: flex;
+  background-image: url(./../../assets/images/credit-card.svg);
+}
+
+.credit-card__num {
+  font-size: 20px;
+  color: var(--dark-i);
+}
+
+.donate-text_1 {
+  font-size: 15px;
+  line-height: 16.5px;
+  letter-spacing: 0.06em;
+}
+
+.donate-text_2 {
+  width: 410px;
+  font-style: italic;
+  font-style: 12px;
+  color: var(--dark-m);
 }
