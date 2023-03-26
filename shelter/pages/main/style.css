@@ -209,3 +209,111 @@ h3 {
 .text_2 {
   width: 389px;
 }
+
+/* -------  Pets  --------------------- */
+
+.pets {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  text-align: center;
+  background: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.pets__title {
+}
+
+.carousel {
+  
+  position: relative;
+}
+
+.carousel__btn {
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--light-s);
+  border-radius: 100px;
+  background-image: url(./../../assets/images/ico_arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: calc(50% - 26px);
+}
+
+.btn-arrow-left {
+  left: 0;
+}
+
+.btn-arrow-right {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.carousel-wrapper {
+
+}
+
+.carousel-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+
+.carousel__card {
+  cursor: pointer;
+  background: #FAFAFA;
+  border-radius: 9px;
+  padding-bottom: 30px;
+}
+
+.card-wrapper {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card-img {
+
+}
+
+.card-img__image {
+  width: 270px;
+  height: 270px;
+}
+
+.image-1 {
+  background-image: url(./../../assets/images/pets-katrine.svg);
+}
+
+.image-2 {
+  background-image: url(./../../assets/images/pets-jennifer.svg);
+}
+
+.image-3 {
+  background-image: url(./../../assets/images/pets-woody.svg);
+}
+
+.card__title {
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 22.72px;
+  color: var(--dark-i);
+}
+
+.card-btn {
+  width: 187px;
+  border: 2px solid var(--light-s);
+  border-radius: 100px;
+  margin: auto;
+}
+
+.pets-btn {
+  width: 261px;
+  border-radius: 100px;
+  background: var(--light-s);
+  margin: auto;
+}
