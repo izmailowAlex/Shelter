@@ -34,11 +34,6 @@ h3 {
   padding: 0 40px;
 }
 
-.container-block {
-  padding-top: 80px;
-  padding-bottom: 100px;
-}
-
 .btn__link {
   text-decoration: none;
   padding: 15px 0;
@@ -54,17 +49,22 @@ h3 {
 /* -------  Header  --------------------- */
 
 .header {
+  width: 100vw;
+  background: var(--white);
+  position: fixed;
+  z-index: 10;
+}
+
+.header-container {
   margin-left: auto;
   margin-right: auto;
   padding-top: 30px;
   padding-bottom: 30px;
-  width: 100%;
   max-width: 1280px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  z-index: 10;
 }
 
 .header-logo-link {
@@ -129,6 +129,8 @@ h3 {
 /* -------  Pets  --------------------- */
 
 .pets {
+  padding-top: 200px;
+  padding-bottom: 100px;
   text-align: center;
   background: var(--light-i);
   display: flex;
