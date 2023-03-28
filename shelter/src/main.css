@@ -1,0 +1,79 @@
+body._loading {
+  overflow-y: hidden;
+}
+
+.mod {
+  background: rgb(73, 56, 44);
+  background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.spinner {
+  width: 16.6666666667rem;
+  height: 16.6666666667rem;
+  border-radius: 50%;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.spinner {
+  color: #f00;
+  animation: color-bubble 2s linear 0s infinite;
+}
+.spinner:after, .spinner:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px;
+  animation: spinner-bubble 1.3s linear 0s infinite;
+  margin: auto;
+  width: 7.3333333333rem;
+  height: 7.3333333333rem;
+  opacity: 0;
+}
+.spinner:before {
+  animation: spinner-bubble 1.3s linear 2s infinite;
+}
+
+@keyframes spinner-bubble {
+  from {
+    width: 0.6666666667rem;
+    height: 0.6666666667rem;
+    opacity: 0.8;
+  }
+  to {
+    width: 16.6666666667rem;
+    height: 16.6666666667rem;
+    opacity: 0;
+  }
+}
+@keyframes color-bubble {
+  0% {
+    color: #009ddc;
+  }
+  33% {
+    color: #50b949;
+  }
+  66% {
+    color: #ee2d24;
+  }
+  100% {
+    color: #feb825;
+  }
+}
+.mod._close {
+  display: none;
+}
