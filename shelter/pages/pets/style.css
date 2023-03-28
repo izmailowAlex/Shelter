@@ -300,7 +300,7 @@ h3 {
     background: var(--primary-light);
   }
 
-  .navigation-btn:hover {
+  .navigation-btn:not([disabled]):hover {
     background: var(--primary-light);
   }
 
