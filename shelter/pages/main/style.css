@@ -70,6 +70,9 @@ h3 {
   background-size: cover;
   position: fixed;
   z-index: 10;
+  transform: translate(0, -50%);
+  transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 .header-container {
@@ -178,6 +181,9 @@ h3 {
   font-weight: 100;
   line-height: 57.2px;
   letter-spacing: 0.04em;
+  transform: translate(-100%, 0);
+  transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 .preview__text {
@@ -185,12 +191,18 @@ h3 {
   font-size: 15px;
   line-height: 24px;
   color: var(--dark-s);
+  transform: translate(-100%, 0);
+  transition: transform 0.8s ease-in-out 0.3s, opacity 0.8s ease-in-out 0.3s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 .preview__btn {
   width: 207px;
   border-radius: 100px;
   background-color: var(--primary);
+  transform: translate(0, 100%);
+  transition: transform 0.8s ease-in-out 0.5s, opacity 0.8s ease-in-out 0.5s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 .preview__btn_link {
@@ -288,6 +300,9 @@ h3 {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  transform: translate(0, -100%);
+  transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 .carousel {
@@ -299,7 +314,6 @@ h3 {
   height: 52px;
   border: 2px solid var(--primary);
   border-radius: 100px;
-  background-image: url(./../../assets/images/ico_arrow.svg);
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
@@ -310,11 +324,18 @@ h3 {
 
 .btn-arrow-left {
   left: 0;
+  background-image: url(./../../assets/images/ico_arrow-left.svg);
+  transform: translate(100%, 0);
+  transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 .btn-arrow-right {
   right: 0;
-  transform: rotate(180deg);
+  background-image: url(./../../assets/images/ico_arrow-right.svg);
+  transform: translate(-100%, 0);
+  transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 .carousel-list {
@@ -380,6 +401,9 @@ h3 {
   border-radius: 100px;
   background: var(--primary);
   margin: auto;
+  transform: translate(0, 100%);
+  transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 @media (hover: hover) {
@@ -528,6 +552,15 @@ h3 {
 .donation__title {
   width: 310px;
   letter-spacing: 0.1em;
+  transform: translate(100%, 0);
+  transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
+  opacity: 0;
+}
+
+.donate-text_1 {
+  transform: translate(100%, 0);
+  transition: transform 0.8s ease-in-out 0.2s, opacity 0.8s ease-in-out 0.2s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 .donation-btn {
@@ -538,6 +571,15 @@ h3 {
   line-height: 23px;
   background: var(--primary);
   border-radius: 9px;
+  transform: translate(100%, 0);
+  transition: transform 0.8s ease-in-out 0.3s, opacity 0.8s ease-in-out 0.3s, background-color 0.3s ease 0s;
+  opacity: 0;
+}
+
+.donate-text_2 {
+  transform: translate(100%, 0);
+  transition: transform 0.8s ease-in-out 0.3s, opacity 0.8s ease-in-out 0.3s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 .credit-card__img {
@@ -657,4 +699,22 @@ h3 {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+/* -------  Animation  --------------------- */
+
+.header._active,
+.preview__title._active,
+.preview__text._active,
+.preview__btn._active,
+.pets__title._active,
+.btn-arrow-left._active,
+.btn-arrow-right._active,
+.pets-btn._active,
+.donation__title._active,
+.donate-text_1._active,
+.donation-btn._active,
+.donate-text_2._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }
