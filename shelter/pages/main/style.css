@@ -138,6 +138,7 @@ h3 {
 
 .nav-item.active .nav-item__link {
   color: var(--light-s);
+  cursor: auto;
 }
 
 @media (hover: hover) {
