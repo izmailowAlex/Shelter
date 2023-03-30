@@ -265,10 +265,6 @@ h3 {
   background: transparent;
 }
 
-.navigation-btn[active] {
-  background: var(--primary);
-}
-
 .btn-center {
   font-size: 20px;
   line-height: 23px;
@@ -277,6 +273,7 @@ h3 {
   align-items: center;
   display: flex;
   color: var(--dark-3xl);
+  background: var(--primary);
 }
 
 .navigation-btn[disabled] {
