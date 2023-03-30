@@ -1,4 +1,6 @@
 :root {
+  --font-georgia: Georgia, serif;
+  --font-arial: Arial, sans-serif;
   --white: #ffffff;
   --primary: #f1cdb3;
   --primary-light: #FDDCC4;
@@ -24,10 +26,11 @@ body {
 }
 
 h3 {
+  font-family: var(--font-georgia);
   font-size: 35px;
   font-weight: 100;
   line-height: 45.5px;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.06em;
   color: var(--dark-i);
 }
 
@@ -61,7 +64,7 @@ h3 {
   margin-right: auto;
   padding-top: 30px;
   padding-bottom: 30px;
-  max-width: 1280px;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -75,8 +78,8 @@ h3 {
   gap: 10px;
 }
 
-.logo-up {
-  font-family: Georgia;
+.logo-title {
+  font-family: var(--font-georgia);
   font-size: 2em;
   font-weight: 100;
   line-height: 35.2px;
@@ -84,8 +87,8 @@ h3 {
   color: var(--dark-i);
 }
 
-.logo-down {
-  font-family: Arial;
+.logo-text {
+  font-family: var(--font-arial);
   font-size: 13px;
   line-height: 14.95px;
   letter-spacing: 1.2px;
@@ -95,7 +98,7 @@ h3 {
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 35px;
+  gap: 36px;
 }
 
 .nav-item {
@@ -117,6 +120,7 @@ h3 {
 
 .nav-item.active .nav-item__link {
   color: var(--dark-i);
+  cursor: auto;
 }
 
 @media (hover: hover) {
@@ -134,6 +138,12 @@ h3 {
   padding-bottom: 100px;
   text-align: center;
   background: var(--light-i);
+}
+
+.pets-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -147,7 +157,10 @@ h3 {
 
 .carousel {
   position: relative;
-  max-width: 1280px;
+  display: flex;
+}
+
+.carousel-wrapper {
   margin-left: auto;
   margin-right: auto;
 }
@@ -157,6 +170,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
   row-gap: 30px;
   column-gap: 40px;
 }
@@ -244,14 +258,12 @@ h3 {
   height: 52px;
   border-radius: 50%;
   cursor: pointer;
-}
-
-.navigation-btn-left {
-  border: 2px solid var(--dark-s);
-}
-
-.navigation-btn-right {
   border: 2px solid var(--primary);
+  background: transparent;
+}
+
+.navigation-btn[active] {
+  background: var(--primary);
 }
 
 .btn-center {
@@ -262,37 +274,18 @@ h3 {
   align-items: center;
   display: flex;
   color: var(--dark-3xl);
-  background: var(--primary);
 }
 
-.navigation-btn__image {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.db-arrow-left {
-  background-image: url(./../../assets/images/db_arrow_left.svg);
-}
-
-.arrow-left {
-  background-image: url(./../../assets/images/arrow_left.svg);
-}
-
-.arrow-right {
-  background-image: url(./../../assets/images/arrow_right.svg);
-}
-
-.db-arrow-right {
-  background-image: url(./../../assets/images/db_arrow_right.svg);
+.navigation-btn[disabled] {
+  border: 2px solid var(--dark-s);
+  cursor: auto;
 }
 
 @media (hover: hover) {
 
   .carousel__card:hover {
     background: var(--white);
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
   }
 
   .carousel__card:hover .card-btn {
@@ -321,7 +314,7 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 60px;
-  max-width: 1280px;
+  max-width: 1200px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 120px;
@@ -337,7 +330,6 @@ h3 {
 
 .item-ft__title {
   width: 282px;
-  letter-spacing: 0.11em;
   color: var(--white);
 }
 
@@ -371,9 +363,10 @@ h3 {
 }
 
 .item-ft-text {
+  font-family: var(--font-georgia);
   font-size: 20px;
   line-height: 23px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   color: var(--primary);
 }
 
