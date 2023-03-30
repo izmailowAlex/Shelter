@@ -1,4 +1,6 @@
 :root {
+  --font-georgia: Georgia, serif;
+  --font-arial: Arial, sans-serif;
   --white: #ffffff;
   --primary: #f1cdb3;
   --primary-light: #FDDCC4;
@@ -24,10 +26,11 @@ body {
 }
 
 h3 {
+  font-family: var(--font-georgia);
   font-size: 35px;
   font-weight: 100;
   line-height: 45.5px;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.06em;
   color: var(--dark-i);
 }
 
@@ -75,8 +78,8 @@ h3 {
   gap: 10px;
 }
 
-.logo-up {
-  font-family: Georgia;
+.logo-title {
+  font-family: var(--font-georgia);
   font-size: 2em;
   font-weight: 100;
   line-height: 35.2px;
@@ -84,8 +87,8 @@ h3 {
   color: var(--dark-i);
 }
 
-.logo-down {
-  font-family: Arial;
+.logo-text {
+  font-family: var(--font-arial);
   font-size: 13px;
   line-height: 14.95px;
   letter-spacing: 1.2px;
@@ -347,7 +350,6 @@ h3 {
 
 .item-ft__title {
   width: 282px;
-  letter-spacing: 0.11em;
   color: var(--white);
 }
 
@@ -381,9 +383,10 @@ h3 {
 }
 
 .item-ft-text {
+  font-family: var(--font-georgia);
   font-size: 20px;
   line-height: 23px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   color: var(--primary);
 }
 
