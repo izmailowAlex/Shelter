@@ -120,6 +120,7 @@ h3 {
 
 .nav-item.active .nav-item__link {
   color: var(--dark-i);
+  cursor: auto;
 }
 
 @media (hover: hover) {
@@ -257,14 +258,12 @@ h3 {
   height: 52px;
   border-radius: 50%;
   cursor: pointer;
-}
-
-.navigation-btn-left {
-  border: 2px solid var(--dark-s);
-}
-
-.navigation-btn-right {
   border: 2px solid var(--primary);
+  background: transparent;
+}
+
+.navigation-btn.active {
+  background: var(--primary);
 }
 
 .btn-center {
@@ -278,28 +277,9 @@ h3 {
   background: var(--primary);
 }
 
-.navigation-btn__image {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.db-arrow-left {
-  background-image: url(./../../assets/images/db_arrow_left.svg);
-}
-
-.arrow-left {
-  background-image: url(./../../assets/images/arrow_left.svg);
-}
-
-.arrow-right {
-  background-image: url(./../../assets/images/arrow_right.svg);
-}
-
-.db-arrow-right {
-  background-image: url(./../../assets/images/db_arrow_right.svg);
+.navigation-btn[disabled] {
+  border: 2px solid var(--dark-s);
+  cursor: auto;
 }
 
 @media (hover: hover) {
