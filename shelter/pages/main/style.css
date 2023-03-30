@@ -396,15 +396,18 @@ h3 {
 }
 
 .card-btn {
-  width: 187px;
-  border: 2px solid var(--primary);
+  padding: 15px 45px;
+  margin: 0 auto;
+  font-family: var(--font-georgia);
+  font-size: 17px;
+  font-weight: 100;
+  line-height: 22.1px;
+  letter-spacing: 0.06em;
   border-radius: 100px;
-  margin: auto;
+  border: 2px solid var(--primary);
+  background: transparent;
   transition: all .3s ease-in-out;
-}
-
-.card-btn__link {
-  padding: 13px 0;
+  cursor: pointer;
 }
 
 .pets-btn {
