@@ -110,15 +110,19 @@ h3 {
   text-decoration: none;
   font-family: Arial;
   font-size: 15px;
-  line-height: 28px;
+  line-height: 24px;
   color: var(--dark-i);
 }
 
-.active {
-  border-bottom: 3px solid var(--primary);
+.nav-item__link:active {
+  border-bottom: 0.2266666667rem solid var(--primary);
 }
 
-.nav-item.active .nav-item__link {
+.nav-item-active {
+  border-bottom: 0.2266666667rem solid var(--primary);
+}
+
+.nav-item-active .nav-item__link {
   color: var(--dark-i);
   cursor: default;
 }
