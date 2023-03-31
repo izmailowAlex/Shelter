@@ -57,6 +57,9 @@ h3 {
   background: var(--white);
   position: fixed;
   z-index: 10;
+  transform: translate(0, -50%);
+  transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 .header-container {
@@ -157,6 +160,9 @@ h3 {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  transform: translate(0, -100%);
+  transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 .carousel {
@@ -259,6 +265,9 @@ h3 {
   display: flex;
   justify-content: center;
   gap: 20px;
+  transform: translate(0, 100%);
+  transition: transform 0.8s ease-in-out 0.5s, opacity 0.8s ease-in-out 0.5s, background-color 0.3s ease 0s;
+  opacity: 0;
 }
 
 .navigation-btn {
@@ -308,7 +317,7 @@ h3 {
 
 .footer {
   padding-top: 56px;
-  background: url(./../assets/images/noise-patterns/noise-patterns.png),
+  background: url(./../assets/images/noise-patterns/noise_transparent.png),
     radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%),#211f20;
   background-repeat: no-repeat;
   background-size: cover;
@@ -392,4 +401,13 @@ h3 {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+/* -------  Animation  --------------------- */
+
+.header._active,
+.pets__title._active,
+.pets-navigation._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }

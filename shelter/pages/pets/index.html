@@ -10,11 +10,17 @@
       type="image/x-icon"
     />
     <title>Shelter pets page</title>
+    <link rel="stylesheet" href="./../../src/css/main.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="shelter">
-      <header class="header container">
+    
+      <div class="mod">
+        <div class="spinner"></div>
+      </div>
+      
+      <header class="header container _animation-item">
         <div class="header-container">
           <div class="header-logo">
             <a class="header-logo-link" href="./../main/index.html">
@@ -46,7 +52,7 @@
       </header>
       <section class="pets container" id="pets">
         <div class="pets-container">
-          <h3 class="pets__title">
+          <h3 class="pets__title _animation-item">
             <span>Our friends who</span>
             <span>are looking for a house</span>
           </h3>
@@ -128,7 +134,7 @@
               </ul>
             </div>
           </div>
-          <div class="pets-navigation">
+          <div class="pets-navigation _animation-item">
             <button class="navigation-btn navigation-btn-left" disabled>
               <svg width="25" height="11" viewBox="0 0 25 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9.94687 10.7852L0.913671 6.08789V4.98438L9.94687 0.287109V1.625L2.43711 5.53125L9.94687 9.44727V10.7852ZM24.018 10.7852L14.9848 6.08789V4.98438L24.018 0.287109V1.625L16.5082 5.53125L24.018 9.44727V10.7852Z" fill="#CDCDCD"/>
@@ -210,5 +216,6 @@
         </div>
       </footer>
     </div>
+    <script type="module" src="./../../src/scripts/main.js"></script>
   </body>
 </html>
