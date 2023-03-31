@@ -123,6 +123,7 @@ h3 {
 
 .nav-item-active {
   border-bottom: 0.2266666667rem solid var(--primary);
+  pointer-events: none;
 }
 
 .nav-item-active .nav-item__link {
