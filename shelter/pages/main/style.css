@@ -396,7 +396,7 @@ h3 {
 }
 
 .card-btn {
-  padding: 15px 45px;
+  padding: 12px 45px;
   margin: 0 auto;
   font-family: var(--font-georgia);
   font-size: 17px;
@@ -585,10 +585,10 @@ h3 {
 }
 
 .donation-btn {
-  padding: 10px 15px;
+  padding: 11px 15px;
   width: 349px;
   display: flex;
-  gap: 15px;
+  gap: 14px;
   line-height: 23px;
   background: var(--primary);
   border-radius: 9px;
