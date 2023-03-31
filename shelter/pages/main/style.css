@@ -330,8 +330,9 @@ h3 {
   height: 52px;
   border: 2px solid var(--primary);
   border-radius: 100px;
-  background-repeat: no-repeat;
-  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: calc(50% - 26px);
   transition: all .3s ease-in-out;
@@ -340,7 +341,6 @@ h3 {
 
 .btn-arrow-left {
   left: 0;
-  background-image: url(./../../assets/images/ico_arrow-left.svg);
   transform: translate(100%, 0);
   transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
   opacity: 0;
@@ -348,7 +348,6 @@ h3 {
 
 .btn-arrow-right {
   right: 0;
-  background-image: url(./../../assets/images/ico_arrow-right.svg);
   transform: translate(-100%, 0);
   transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
   opacity: 0;
@@ -434,6 +433,10 @@ h3 {
     background-image: url(./../../assets/images/ico_arrow.svg);
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  .carousel__btn:active {
+    background: var(--primary);
   }
 
   .carousel__card:hover {
@@ -576,7 +579,7 @@ h3 {
 
 .donation__title {
   width: 310px;
-  transform: translate(100%, 0);
+  transform: translate(30%, 0);
   transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
   opacity: 0;
 }
@@ -585,7 +588,7 @@ h3 {
   font-family: var(--font-georgia);
   line-height: 16.5px;
   letter-spacing: 0.06em;
-  transform: translate(100%, 0);
+  transform: translate(30%, 0);
   transition: transform 0.8s ease-in-out 0.2s, opacity 0.8s ease-in-out 0.2s, background-color 0.3s ease 0s;
   opacity: 0;
 }
@@ -598,7 +601,7 @@ h3 {
   line-height: 23px;
   background: var(--primary);
   border-radius: 9px;
-  transform: translate(100%, 0);
+  transform: translate(30%, 0);
   transition: transform 0.8s ease-in-out 0.3s, opacity 0.8s ease-in-out 0.3s, background-color 0.3s ease 0s;
   opacity: 0;
 }
@@ -626,7 +629,7 @@ h3 {
   font-size: 12px;
   line-height: 18px;
   color: var(--dark-m);
-  transform: translate(100%, 0);
+  transform: translate(30%, 0);
   transition: transform 0.8s ease-in-out 0.3s, opacity 0.8s ease-in-out 0.3s, background-color 0.3s ease 0s;
   opacity: 0;
 }
