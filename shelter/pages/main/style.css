@@ -89,11 +89,12 @@ h3 {
   text-align: center;
 }
 
-.header-logo-link {
+.header-logo {
   text-decoration: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  cursor: default;
 }
 
 .logo-title {
@@ -138,6 +139,7 @@ h3 {
 
 .nav-item.active .nav-item__link {
   color: var(--light-s);
+  cursor: default;
 }
 
 @media (hover: hover) {

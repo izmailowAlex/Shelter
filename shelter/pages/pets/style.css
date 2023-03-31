@@ -120,6 +120,7 @@ h3 {
 
 .nav-item.active .nav-item__link {
   color: var(--dark-i);
+  cursor: default;
 }
 
 @media (hover: hover) {
