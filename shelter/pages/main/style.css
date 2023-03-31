@@ -606,9 +606,10 @@ h3 {
 }
 
 .credit-card__num {
+  font-family: var(--font-georgia);
   font-size: 20px;
   line-height: 23px;
-  letter-spacing: 0.112em;
+  letter-spacing: 0.06em;
   color: var(--dark-i);
 }
 
