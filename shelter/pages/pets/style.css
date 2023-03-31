@@ -303,8 +303,7 @@ h3 {
 .footer {
   padding-top: 56px;
   background: url(./../assets/images/noise-patterns/noise-patterns.png),
-      radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%),
-      #211f20;
+    radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%),#211f20;
   background-repeat: no-repeat;
   background-size: cover;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
