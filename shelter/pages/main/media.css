@@ -1,0 +1,244 @@
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  /* -------  Header  --------------------- */
+
+  .header {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .header-container {
+    padding: 30px;
+  }
+
+  /* -------  Preview  --------------------- */
+
+  .preview {
+    height: 100%;
+    filter: none;
+  }
+
+  .preview-container {
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .preview-contain {
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    position: static;
+  }
+
+  .preview__title {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  
+  .preview__text {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .preview__btn {
+    margin-left: auto;
+    margin-right: auto;
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .preview-screen {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .preview-screen-img {
+    margin-left: 19.5%;
+    width: 569px;
+    height: 593px;
+    background-image: url(./../../assets/images/start-screen-puppy-768.svg);
+    position: static;
+  }
+
+  /* -------  About  --------------------- */
+
+  .about-container {
+    flex-direction: column-reverse;
+    gap: 80px;
+  }
+
+  .about-screen {
+    width: 100%;
+  }
+
+  .about-screen-img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-description {
+    margin-left: auto;
+    margin-right: auto;
+    width: 61%;
+    gap: 25px;
+  }
+
+  .description__text {
+    width: 100%;
+  }
+
+  /* -------  Pets  --------------------- */
+
+  .pets__title {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .carousel-wrapper {
+    width: 580px;
+  }
+
+  .btn-arrow-left {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  
+  .btn-arrow-right {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .carousel-list {
+    gap: 40px;
+  }
+
+  .pets-btn {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  /* -------  Help  --------------------- */
+
+  .help__title {
+    margin-bottom: 58px;
+  }
+
+  .help-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 55px;
+    column-gap: 65px;
+  }
+
+  /* -------  Donatation  --------------------- */
+
+  .donation-container {
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+
+  .donation-screen {
+    width: 100%;
+  }
+
+  .donation-screen__img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 505px;
+    height: 261px;
+    background-image: url(./../../assets/images/donation-dog.svg);
+    background-repeat: no-repeat;
+  }
+
+  .donation-description {
+    width: 53.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+  }
+
+  .donation__title {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .donate-text_1 {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .donation-btn {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .donate-text_2 {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  /* -------  Footer  --------------------- */
+
+  .footer {
+    padding-top: 32px;
+    background: url(./../../assets/images/noise-patterns/noise_transparent@2x.png),
+      radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%),#211f20;
+  }
+
+  .footer-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
+  }
+
+  .item-ft {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .contacts {
+    margin-left: -5px;
+  }
+
+  .location {
+    margin-left: -22px;
+  }
+
+  .footer-img {
+    padding-top: 65px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+  }
+
+  .footer-img__image {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 310px;
+    background-image: url(./../../assets/images/footer-puppy.svg);
+    background-repeat: no-repeat;
+    position: static;
+  }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  
+}

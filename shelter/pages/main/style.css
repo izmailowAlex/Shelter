@@ -35,7 +35,8 @@ h3 {
 }
 
 .container {
-  padding: 0 40px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .container-block {
@@ -63,12 +64,16 @@ h3 {
     border-radius: 100px;
   }
 
+  .btn__link:active {
+    background: var(--primary);
+  }
+
 }
 
 /* -------  Header  --------------------- */
 
 .header {
-  width: 100vw;
+  width: 100%;
   position: fixed;
   z-index: 10;
   transform: translate(0, -50%);
@@ -158,7 +163,7 @@ h3 {
 /* -------  Preview  --------------------- */
 
 .preview {
-  width: 100vw;
+  width: 100%;
   height: 908px;
   background: url(./../../assets/images/noise-patterns/noise_transparent@2x.png),
     radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
@@ -222,6 +227,10 @@ h3 {
 }
 
 .preview-screen {
+  width: 100%;
+}
+
+.preview-screen-img {
   width: 698px;
   height: 728px;
   background-image: url(./../../assets/images/start-screen-puppy.svg);
@@ -258,7 +267,7 @@ h3 {
   width: 50%;
 }
 
-.about-screen__img {
+.about-screen-img {
   margin-left: 170px;
   width: 300px;
   height: 408px;
@@ -322,6 +331,7 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   width: 990px;
+  overflow: hidden;
 }
 
 .carousel__btn {
@@ -353,9 +363,10 @@ h3 {
 }
 
 .carousel-list {
+  width: 100%;
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  gap: 90px;
 }
 
 .carousel__card {
@@ -477,9 +488,8 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-self: center;
   row-gap: 55px;
-  column-gap: 115px;
+  column-gap: 120px;
 }
 
 .help-item {
@@ -539,7 +549,7 @@ h3 {
   font-family: var(--font-georgia);
   font-size: 20px;
   line-height: 23px;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.06em;
   color: var(--dark-i);
 }
 
@@ -672,10 +682,10 @@ h3 {
 }
 
 .item-ft {
-  height: 234px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 32px;
 }
 
 .item-ft__title {
