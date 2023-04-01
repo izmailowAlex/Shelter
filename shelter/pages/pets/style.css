@@ -35,7 +35,13 @@ h3 {
 }
 
 .container {
-  padding: 0 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.container-block {
+  padding-top: 80px;
+  padding-bottom: 100px;
 }
 
 .btn__link {
@@ -53,7 +59,7 @@ h3 {
 /* -------  Header  --------------------- */
 
 .header {
-  width: 100vw;
+  width: 100%;
   background: var(--white);
   position: fixed;
   z-index: 10;
@@ -67,6 +73,7 @@ h3 {
   margin-right: auto;
   padding-top: 30px;
   padding-bottom: 30px;
+  width: 100%;
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
@@ -94,7 +101,7 @@ h3 {
   font-family: var(--font-arial);
   font-size: 13px;
   line-height: 14.95px;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.3px;
   color: var(--dark-3xl);
 }
 
@@ -174,9 +181,12 @@ h3 {
 .carousel-wrapper {
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  overflow: hidden;
 }
 
 .carousel-list {
+  width: 100%;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -336,10 +346,10 @@ h3 {
 }
 
 .item-ft {
-  height: 234px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 32px;
 }
 
 .item-ft__title {
