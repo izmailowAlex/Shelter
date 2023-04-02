@@ -7,6 +7,7 @@
   --light-i: #f6f6f6;
   --light-s: #FAFAFA;
   --dark-s: #cdcdcd;
+  --black: #000000;
   --dark: #292929;
   --dark-i: #545454;
   --dark-m: #b2b2b2;
@@ -47,9 +48,10 @@ h3 {
 .btn__link {
   text-decoration: none;
   padding: 15px 0;
+  font-family: var(--font-georgia);
   font-size: 17px;
   line-height: 22.1px;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.06em;
   color: var(--dark-3xl);
   display: flex;
   justify-content: center;
@@ -67,6 +69,51 @@ h3 {
   transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
   opacity: 0;
 }
+
+/* ------- *** Burger-menu *** --------------------- */
+
+.burger-menu {
+  height: 100%;
+  display: none;
+}
+
+.burger-menu-button {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 30;
+  background-color: transparent;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.burger-menu-lines,
+.burger-menu-lines::before,
+.burger-menu-lines::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--black);
+  transition: 0.4s;
+}
+
+.burger-menu-lines {
+  top: 50%;
+}
+
+.burger-menu-lines::before {
+  content: "";
+  top: -10px;
+}
+
+.burger-menu-lines::after {
+  content: "";
+  top: 10px;
+}
+
+/* ------- // *** Burger-menu *** // --------------------- */
 
 .header-container {
   margin-left: auto;
@@ -176,13 +223,14 @@ h3 {
 .carousel {
   position: relative;
   display: flex;
+  flex-direction: column;
+  gap: 59px;
 }
 
 .carousel-wrapper {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  overflow: hidden;
 }
 
 .carousel-list {
@@ -194,6 +242,7 @@ h3 {
   text-align: center;
   row-gap: 31px;
   column-gap: 40px;
+  overflow: hidden;
 }
 
 .carousel__card {
