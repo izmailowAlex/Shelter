@@ -22,9 +22,6 @@ function animScroll() {
 
     if ((window.pageYOffset > itemOffset - animItemPoint) && window.pageYOffset < (itemOffset + itemHeight)) {
       animItem.classList.add('_active')
-    } else {
-      if (!animItem.classList.contains('_animation-ended'))
-        animItem.classList.remove('_active')
     }
   }
 }

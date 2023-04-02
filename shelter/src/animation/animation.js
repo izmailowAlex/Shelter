@@ -1,4 +1,4 @@
-import animScroll from "./animation/smoothScroll.mjs";
+import animScroll from "./smoothScroll.mjs";
 
 //prealoder
 window.onload = function () {
