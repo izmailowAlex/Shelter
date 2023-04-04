@@ -81,7 +81,7 @@ h3 {
   opacity: 0;
 }
 
-/* ------- *** Burger-menu *** --------------------- */
+/* -------  Burger-menu-BUTTON  --------------------- */
 
 .burger-menu {
   height: 100%;
@@ -94,7 +94,7 @@ h3 {
   position: relative;
   z-index: 30;
   background-color: transparent;
-  transition: 0.4s;
+  transition: all 0.8s ease 0s;
   cursor: pointer;
 }
 
@@ -122,6 +122,95 @@ h3 {
 .burger-menu-lines::after {
   content: "";
   top: 10px;
+}
+
+.burger-menu-active .burger-menu-button {
+  transform: rotate(90deg);
+}
+
+.visible {
+  overflow: visible;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+/* ------- // *** Burger-menu MODAL *** // --------------------- */
+
+.burger-nav {
+  width: 320px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  background: var(--dark-3xl);
+  display: flex;
+  transform: translateX(320px);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+
+.burger-menu-active .burger-nav {
+  transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.burger-nav-list {
+  margin: auto;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.burger-nav-item {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.burger-nav-item-link {
+  text-decoration: none;
+  font-family: var(--font-arial);
+  font-size: 32px;
+  line-height: 51.2px;
+  color: var(--dark-s);
+  transition: all 0.8s ease 0s;
+}
+
+.burger-nav-item-link:active {
+  border-bottom: 0.2266666667rem solid var(--primary);
+}
+
+.burger-nav-item-active .burger-nav-item-link {
+  border-bottom: 0.2266666667rem solid var(--primary);
+  pointer-events: none;
+}
+
+.burger-nav-item-active .burger-nav-item-link {
+  color: var(--light-s);
+  cursor: default;
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.55);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease 0s;
+}
+
+.burger-menu-active .overlay {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* ------- // *** Burger-menu *** // --------------------- */
@@ -191,7 +280,7 @@ h3 {
   border-bottom: 0.2266666667rem solid var(--primary);
 }
 
-.nav-item-active {
+.nav-item-active .nav-item__link {
   border-bottom: 0.2266666667rem solid var(--primary);
   pointer-events: none;
 }
@@ -204,6 +293,10 @@ h3 {
 @media (hover: hover) {
 
   .nav-item__link:hover {
+    color: var(--light-s);
+  }
+
+  .burger-nav-item-link:hover {
     color: var(--light-s);
   }
 
