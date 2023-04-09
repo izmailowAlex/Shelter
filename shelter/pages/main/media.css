@@ -113,7 +113,29 @@
     gap: 40px;
   }
 
-  .carousel-navigation {
+  .carousel__card:nth-child(n+3) {
+    display: none;
+  }
+
+  @keyframes left {
+    from {
+      left: 0;
+    }
+    to {
+      left: calc(-100% - 40px);
+    }
+  }
+  
+  @keyframes right {
+    from {
+      left: calc(100% + 40px);
+    }
+    to {
+      left: 0;
+    }
+  }
+
+  .carousel-control {
     justify-content: center;
     gap: 606px;
   }
@@ -412,7 +434,29 @@
     gap: 20px;
   }
 
-  .carousel-navigation {
+  @keyframes left {
+    from {
+      left: 0;
+    }
+    to {
+      left: calc(-100% - 20px);
+    }
+  }
+  
+  @keyframes right {
+    from {
+      left: calc(100% + 20px);
+    }
+    to {
+      left: 0;
+    }
+  }
+
+  .carousel__card:nth-child(n+2) {
+    display: none;
+  }
+
+  .carousel-control {
     padding-top: 24px;
     width: 100%;
     display: flex;
