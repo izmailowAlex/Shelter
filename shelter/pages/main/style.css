@@ -75,7 +75,7 @@ h3 {
 .header {
   width: 100%;
   position: fixed;
-  z-index: 10;
+  z-index: 40;
   transform: translate(0, -50%);
   transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
   opacity: 0;
@@ -473,7 +473,25 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   width: 990px;
+}
+
+.carousel-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  gap: 90px;
+  z-index: 10;
   overflow: hidden;
+}
+
+.carousel-item {
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  position: relative;
+  left: 0;
+  margin: 0 auto;
+  animation: 0.8s ease-in-out;
 }
 
 .carousel-list {
@@ -481,6 +499,53 @@ h3 {
   list-style: none;
   display: flex;
   gap: 90px;
+}
+
+.active,
+.next {
+  display: block;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(-100% - 90px);
+  }
+}
+
+@keyframes right {
+  from {
+    left: calc(100% + 90px);
+  }
+  to {
+    left: 0;
+  }
 }
 
 .carousel__card {
@@ -491,6 +556,10 @@ h3 {
   transition: all .3s ease-in-out;
 }
 
+.carousel__card:nth-child(n+4) {
+  display: none;
+}
+
 .card-wrapper {
   text-decoration: none;
   display: flex;
@@ -498,21 +567,9 @@ h3 {
   gap: 30px;
 }
 
-.card-img__image {
+.card-img {
   width: 270px;
   height: 270px;
-}
-
-.image-1 {
-  background-image: url(./../../assets/images/pets-katrine.svg);
-}
-
-.image-2 {
-  background-image: url(./../../assets/images/pets-jennifer.svg);
-}
-
-.image-3 {
-  background-image: url(./../../assets/images/pets-woody.svg);
 }
 
 .card__title {
@@ -539,7 +596,7 @@ h3 {
   cursor: pointer;
 }
 
-.carousel-navigation {
+.carousel-control {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -588,9 +645,6 @@ h3 {
   .carousel__btn:hover {
     border: 2px solid var(--primary-light);
     background: var(--primary-light);
-    background-image: url(./../../assets/images/ico_arrow.svg);
-    background-repeat: no-repeat;
-    background-position: center;
   }
 
   .carousel__btn:active {
