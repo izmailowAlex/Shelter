@@ -64,7 +64,7 @@ h3 {
   width: 100%;
   background: var(--white);
   position: fixed;
-  z-index: 10;
+  z-index: 30;
   transform: translate(0, -50%);
   transition: transform 0.8s ease-in-out 0s, opacity 0.8s ease-in-out 0s, background-color 0.3s ease 0s;
   opacity: 0;
@@ -322,16 +322,84 @@ h3 {
   width: 100%;
 }
 
+.carousel-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  gap: 90px;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.carousel-item {
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  position: relative;
+  left: 0;
+  margin: 0 auto;
+  animation: 0.5s ease-in-out;
+}
+
 .carousel-list {
   width: 100%;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+  /* text-align: center; */
   row-gap: 31px;
   column-gap: 40px;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+
+.active,
+.next {
+  display: block;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(-100% - 90px);
+  }
+}
+
+@keyframes right {
+  from {
+    left: calc(100% + 90px);
+  }
+  to {
+    left: 0;
+  }
 }
 
 .carousel__card {
@@ -349,41 +417,9 @@ h3 {
   gap: 30px;
 }
 
-.card-img__image {
+.card-img {
   width: 270px;
   height: 270px;
-}
-
-.image-1 {
-  background-image: url(./../../assets/images/pets-katrine.svg);
-}
-
-.image-2 {
-  background-image: url(./../../assets/images/pets-jennifer.svg);
-}
-
-.image-3 {
-  background-image: url(./../../assets/images/pets-woody.svg);
-}
-
-.image-4 {
-  background-image: url(./../../assets/images/pets-sophia.svg);
-}
-
-.image-5 {
-  background-image: url(./../../assets/images/pets-timmy.svg);
-}
-
-.image-6 {
-  background-image: url(./../../assets/images/pets-charly.svg);
-}
-
-.image-7 {
-  background-image: url(./../../assets/images/pets-scarlet.svg);
-}
-
-.image-8 {
-  background-image: url(./../../assets/images/pets-freddie.svg);
 }
 
 .card__title {
@@ -410,7 +446,7 @@ h3 {
   cursor: pointer;
 }
 
-.pets-navigation {
+.pets-control {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -419,7 +455,7 @@ h3 {
   opacity: 0;
 }
 
-.navigation-btn {
+.control-btn {
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -428,7 +464,7 @@ h3 {
   background: transparent;
 }
 
-.btn-center {
+.control-btn-center {
   font-size: 20px;
   line-height: 23px;
   text-align: center;
@@ -439,7 +475,7 @@ h3 {
   background: var(--primary);
 }
 
-.navigation-btn[disabled] {
+.control-btn[disabled] {
   border: 2px solid var(--dark-s);
   cursor: auto;
 }
@@ -456,7 +492,7 @@ h3 {
     background: var(--primary-light);
   }
 
-  .navigation-btn:not([disabled]):hover {
+  .control-btn:not([disabled]):hover {
     background: var(--primary-light);
   }
 
@@ -554,7 +590,7 @@ h3 {
 
 .header._active,
 .pets__title._active,
-.pets-navigation._active {
+.pets-control._active {
   transform: translate(0, 0);
   opacity: 1;
 }
