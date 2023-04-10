@@ -65,28 +65,42 @@ const SLIDER = async function () {
     return dataCopy = [...data.sort(() => Math.random() - 0.5)];
   };
 
+  function checkSizeWindow() {
+    if (innerWidth >= 1280) {
+      countPages = 6;
+    }
+    if (innerWidth >= 768 && innerWidth < 1280) {
+      countPages = 8;
+    }
+    if (innerWidth >= 320 && innerWidth < 768) {
+      countPages = 16;
+    }
+    checkStatusPage(countPages);
+  }
+
   function settingsWindow() {
     switch (true) {
       case window.innerWidth >= 1280:
         countPages = 6;
-        countItemsOnPage = allCountItemsPets / countPages;
         checkStatusPage(countPages);
+        checkSizeWindow();
       break;
       case window.innerWidth >= 768 && window.innerWidth < 1280:
         countPages = 8;
-        countItemsOnPage = allCountItemsPets / countPages;
         checkStatusPage(countPages);
+        checkSizeWindow();
       break;
       case window.innerWidth >= 320 && window.innerWidth < 768:
         countPages = 16;
-        countItemsOnPage = allCountItemsPets / countPages;
         checkStatusPage(countPages);
+        checkSizeWindow();
       break;
     }
     for (let i = 0; i < countPages; i++) {
       arrDataList.push([...shuffle()]);
     }
     allCountItemsPets = [].concat(...arrDataList).length;
+    countItemsOnPage = allCountItemsPets / countPages;
     containCarouselBlock();
   }
   settingsWindow();
@@ -101,7 +115,8 @@ const SLIDER = async function () {
         if (i === 0) carouselItem.classList.add("active");
         const carouselList = document.createElement("ul");
         carouselList.classList.add("carousel-list");
-        arrDataList[i].forEach(item => {
+        arrDataList[i].forEach((item, i) => {
+          if (i > countItemsOnPage) return;
           const carouselCard = document.createElement("li");
           carouselCard.classList.add("carousel__card");
           carouselCard.innerHTML = `
@@ -110,7 +125,7 @@ const SLIDER = async function () {
                 <img class="card-img__image" src="${item.img}" alt="card" />
               </div>
               <div class="card__title">${item.name}</div>
-              <button class="card-btn">Learn more</button>
+              <button class="card-btn popup-btn">Learn more</button>
             </div>
           `;
           carouselList.append(carouselCard);
@@ -154,13 +169,28 @@ const SLIDER = async function () {
       PAGE_BTN_LEFT.setAttribute("disabled", true);
       PAGE_BTN_DBL_LEFT.firstElementChild.firstElementChild.attributes.fill.value = "#CDCDCD";
       PAGE_BTN_LEFT.firstElementChild.firstElementChild.attributes.fill.value = "#CDCDCD";
+      if (PAGE_BTN_RIGHT.hasAttribute("disabled") && PAGE_BTN_DBL_RIGHT.hasAttribute("disabled")) {
+        PAGE_BTN_RIGHT.removeAttribute("disabled");
+        PAGE_BTN_DBL_RIGHT.removeAttribute("disabled");
+        PAGE_BTN_RIGHT.firstElementChild.firstElementChild.attributes.fill.value = "#292929";
+        PAGE_BTN_DBL_RIGHT.firstElementChild.firstElementChild.attributes.fill.value = "#292929";
+      }
     }
-    if (page === x) {
+    if (page === countPages) {
+      PAGE_BTN_DBL_LEFT.removeAttribute("disabled");
+      PAGE_BTN_LEFT.removeAttribute("disabled");
+      PAGE_BTN_DBL_LEFT.firstElementChild.firstElementChild.attributes.fill.value = "#292929";
+      PAGE_BTN_LEFT.firstElementChild.firstElementChild.attributes.fill.value = "#292929";
       PAGE_BTN_DBL_RIGHT.setAttribute("disabled", true);
       PAGE_BTN_RIGHT.setAttribute("disabled", true);
       PAGE_BTN_DBL_RIGHT.firstElementChild.firstElementChild.attributes.fill.value = "#CDCDCD";
       PAGE_BTN_RIGHT.firstElementChild.firstElementChild.attributes.fill.value = "#CDCDCD";
     }
+    if (page > x) {
+      containCarouselBlock();
+      page = x;
+      PAGINATION.innerHTML = page;
+    };
   }
 
   function hideItem(direction) {
@@ -178,6 +208,13 @@ const SLIDER = async function () {
       this.classList.add("active");
       isEnabled = true;
     })
+  }
+
+  function resetCarousel(n) {
+    items[n-1].classList.add("active");
+    page = n;
+    PAGINATION.innerHTML = page;
+    checkStatusPage(page)
   }
 
   function previousItem(n) {
@@ -207,9 +244,35 @@ const SLIDER = async function () {
       nextItem(currentItem);
     }
   });
+
+  document.querySelector(".control-btn-db-left").addEventListener("click", function() {
+    if (isEnabled) {
+      items[currentItem].classList.remove("active");
+      changeCurrentItem(0);
+      resetCarousel(1);
+    }
+  });
+
+  document.querySelector(".control-btn-db-right").addEventListener("click", function() {
+    if (isEnabled) {
+      items[currentItem].classList.remove("active");
+      changeCurrentItem(countPages - 1);
+      resetCarousel(countPages);
+    }
+  });
+
+  window.addEventListener(`resize`, () => {
+    checkSizeWindow();
+  }, false);
 };
 
-window.addEventListener("load", () => {
+const Popup = function () {
+  const LEARN_MORE_BUTTONS = document.querySelectorAll(".popup-btn");
+  // console.log(LEARN_MORE_BUTTONS)
+}
+
+window.addEventListener("DOMContentLoaded", () => {
   burgerMenu();
   SLIDER();
+  Popup();
 });
