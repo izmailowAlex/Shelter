@@ -347,12 +347,8 @@ h3 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  /* flex-wrap: wrap; */
-  /* justify-content: center; */
-  /* text-align: center; */
   row-gap: 31px;
   column-gap: 40px;
-  /* overflow: hidden; */
 }
 
 .active,
