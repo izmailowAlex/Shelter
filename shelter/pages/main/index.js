@@ -1,5 +1,5 @@
-// console.log('Оценка: 100 баллов\n\nТребования к вёрстке:\n\n1. Вёрстка страницы Main соответствует макету при ширине экрана 1280px: +14\n\n2. Вёрстка страницы Main соответствует макету при ширине экрана 768px: +14\n\n3. Вёрстка страницы Main соответствует макету при ширине экрана 320px: +14\n\n4. Вёрстка страницы Pets соответствует макету при ширине экрана 1280px: +6\n\n5. Вёрстка страницы Pets соответствует макету при ширине экрана 768px: +6\n\nВёрстка страницы Pets соответствует макету при ширине экрана 320px: +6\n\n7. Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки, справа от отдельных блоков не появляются белые поля. Весь контент страницы при этом сохраняется: не обрезается и не удаляется: +20\n\n8. Верстка резиновая: при плавном изменении размера экрана от 1280px до 320px верстка подстраивается под этот размер, элементы верстки меняют свои размеры и расположение, не наезжают друг на друга, изображения могут менять размер, но сохраняют правильные пропорции (Примеры неправильной и правильной реализации): +8\n\n9. При ширине экрана меньше 768px на обеих страницах меню в хедере скрывается, появляется иконка бургер-меню: +4\n\n10. Верстка обеих страниц валидная: для проверки валидности вёрстки используйте сервис https://validator.w3.org/ : +8');
 const BODY = document.querySelector(".shelter").parentElement;
+const SHELTER = document.querySelector(".shelter");
 const BURGER_BTN = document.querySelector(".burger-menu-button");
 const BURGER_MENU = document.querySelector("#burger");
 const BURGER_MENU_ITEMS = document.querySelectorAll(".burger-nav-item");
@@ -38,107 +38,123 @@ const burgerMenu = function () {
   }
 };
 
-const SLIDER = function () {
-  const dataList = [
-    {
-      "name": "Jennifer",
-      "img": "./../../assets/images/pets-jennifer.svg",
-      "type": "Dog",
-      "breed": "Labrador",
-      "description": "Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.",
-      "age": "2 months",
-      "inoculations": ["none"],
-      "diseases": ["none"],
-      "parasites": ["none"]
-    },
-    {
-      "name": "Sophia",
-      "img": "./../../assets/images/pets-sophia.svg",
-      "type": "Dog",
-      "breed": "Shih tzu",
-      "description": "Sophia here and I'm looking for my forever home to live out the best years of my life. I am full of energy. Everyday I'm learning new things, like how to walk on a leash, go potty outside, bark and play with toys and I still need some practice.",
-      "age": "1 month",
-      "inoculations": ["parvovirus"],
-      "diseases": ["none"],
-      "parasites": ["none"]
-    },
-    {
-      "name": "Woody",
-      "img": "./../../assets/images/pets-woody.svg",
-      "type": "Dog",
-      "breed": "Golden Retriever",
-      "description": "Woody is a handsome 3 1/2 year old boy. Woody does know basic commands and is a smart pup. Since he is on the stronger side, he will learn a lot from your training. Woody will be happier when he finds a new family that can spend a lot of time with him.",
-      "age": "3 years 6 months",
-      "inoculations": ["adenovirus", "distemper"],
-      "diseases": ["right back leg mobility reduced"],
-      "parasites": ["none"]
-    },
-    {
-      "name": "Scarlett",
-      "img": "./../../assets/images/pets-scarlet.svg",
-      "type": "Dog",
-      "breed": "Jack Russell Terrier",
-      "description": "Scarlett is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.",
-      "age": "3 months",
-      "inoculations": ["parainfluenza"],
-      "diseases": ["none"],
-      "parasites": ["none"]
-    },
-    {
-      "name": "Katrine",
-      "img": "./../../assets/images/pets-katrine.svg",
-      "type": "Cat",
-      "breed": "British Shorthair",
-      "description": "Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.",
-      "age": "6 months",
-      "inoculations": ["panleukopenia"],
-      "diseases": ["none"],
-      "parasites": ["none"]
-    },
-    {
-      "name": "Timmy",
-      "img": "./../../assets/images/pets-timmy.svg",
-      "type": "Cat",
-      "breed": "British Shorthair",
-      "description": "Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.",
-      "age": "2 years 3 months",
-      "inoculations": ["calicivirus", "viral rhinotracheitis"],
-      "diseases": ["kidney stones"],
-      "parasites": ["none"]
-    },
-    {
-      "name": "Freddie",
-      "img": "./../../assets/images/pets-freddie.svg",
-      "type": "Cat",
-      "breed": "British Shorthair",
-      "description": "Freddie is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Freddie has bounced around a lot in his life, and is looking to find his forever home.",
-      "age": "2 months",
-      "inoculations": ["rabies"],
-      "diseases": ["none"],
-      "parasites": ["none"]
-    },
-    {
-      "name": "Charly",
-      "img": "./../../assets/images/pets-charly.svg",
-      "type": "Dog",
-      "breed": "Jack Russell Terrier",
-      "description": "This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
-      "age": "8 years",
-      "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
-      "diseases": ["deafness", "blindness"],
-      "parasites": ["lice", "fleas"]
-    }
-  ]
-  let dataListWork = [];
+const CAROUSEL = async function () {
+  let response = await fetch('./../../assets/pets.json');
+  let data = await response.json();
+  
+
+  let currentItem = 0,
+      emptyItem = 0,
+      isEnabled = true;
+
+  let arrDataList = [];
+
+  // ============ RANDOM ============== //
+
+  const generateSeed = () => {
+    let result = [];
+  
+    for (let i = 0; i < 8; i++) {
+      const generateRandomNumber = () => {
+        let number = Math.floor(Math.random() * 8);
+        if (result.includes(number)) {
+          generateRandomNumber();
+        } else {
+          result.push(number);
+        }
+      };
+      generateRandomNumber();
+    };
+  
+    return result;
+  };
+
+  const shuffleArr = (arr) => {
+    let result = [];
+  
+    arr.forEach(() => {
+      const generateRandomNumber = () => {
+        let number = Math.floor(Math.random() * 8);
+        if (!result.includes(number) && arr.includes(number)) {
+          result.push(number);
+        } else {
+          generateRandomNumber();
+        }
+      };
+      generateRandomNumber();
+    });
+  
+    return result;
+  };
+
+  const generateRandomArr = (seed) => {
+    let resultArr = [];
+  
+    resultArr.push([seed[0], seed[1], seed[2]]);
+    resultArr.push([seed[3], seed[4], seed[5]]);
+    resultArr.push([seed[6], seed[7]]);
+    resultArr[0] = shuffleArr(resultArr[0]);
+    resultArr[1] = shuffleArr(resultArr[1]);
+    resultArr[2] = shuffleArr(resultArr[2]);
+    resultArr = resultArr.flat(3);
+    return resultArr;
+  };
+
+  const generatePetsData = () => {
+    const seed = generateSeed();
+    let petsData = [];
+    let dataInterfacePaginationRandomArr = [];
+    for (let i = 0; i < 6; i++) {
+      dataInterfacePaginationRandomArr.push(generateRandomArr(seed))
+      dataInterfacePaginationRandomArr = dataInterfacePaginationRandomArr.flat(3)
+    };
+    dataInterfacePaginationRandomArr.forEach(e => {
+      petsData.push(data[e]);
+    });
+    arrDataList = petsData;
+    return arrDataList;
+  };
+
+  // ============ *// RANDOM //* ============== //
+
+  function renderCarouselBlock() {
+    generatePetsData();
+    const carouselWrapper = document.querySelector(".carousel-wrapper");
+    carouselWrapper.innerHTML = "";
+    const carouselContainer = document.createElement("div");
+    carouselContainer.classList.add("carousel-container");
+    for (let i = 0; i < 3; i++) {
+      const carouselItem = document.createElement("div");
+      carouselItem.classList.add("carousel-item");
+      const carouselList = document.createElement("ul");
+      carouselList.classList.add("carousel-list");
+      if (i === currentItem) {
+        carouselItem.classList.add("active");
+        for (let i = 0; i < 8; i++) {
+          const item = arrDataList.splice(0, 1);
+          const carouselCard = document.createElement("li");
+          carouselCard.classList.add("carousel__card");
+          carouselCard.setAttribute("data-name", item[0].name);
+          carouselCard.innerHTML = `
+            <div class="card-wrapper">
+              <div class="card-img">
+                <img class="card-img__image" src="${item[0].img}" alt="card" />
+              </div>
+              <div class="card__title">${item[0].name}</div>
+              <button class="card-btn popup-btn">Learn more</button>
+            </div>
+          `;
+          carouselList.append(carouselCard);
+        }
+        carouselItem.append(carouselList);
+      };
+      carouselContainer.append(carouselItem);
+    };
+    carouselWrapper.append(carouselContainer);
+  }
+  renderCarouselBlock();
   
   let items = document.querySelectorAll(".carousel-item");
-  let currentItem = 0;
-  let emptyItem = 0;
-  let isEnabled = true;
-
-  function shuffle(dataList) {
-      return dataListWork = dataList.sort(() => Math.random() - 0.5);
-  };
 
   function changeCurrentItem(n) {
     currentItem = (n + items.length) % items.length;
@@ -149,16 +165,16 @@ const SLIDER = function () {
   }
 
   function fillNextList(n) {
-    shuffle(dataList);
+    generatePetsData();
     const nextList = items[n];
-    console.log(dataListWork)
     if (nextList.innerHTML == "") {
-      const ul = document.createElement("ul");
-      ul.classList.add("carousel-list")
-      dataListWork.forEach((item) => {
-        const li = document.createElement("li");
-        li.classList.add("carousel__card")
-        li.innerHTML = `
+      const carouselList = document.createElement("ul");
+      carouselList.classList.add("carousel-list")
+      arrDataList.forEach((item) => {
+        const carouselCard = document.createElement("li");
+        carouselCard.classList.add("carousel__card");
+        carouselCard.setAttribute("data-name", item.name);
+        carouselCard.innerHTML = `
           <div class="card-wrapper">
             <div class="card-img">
               <img class="card-img__image" src="${item.img}" alt="card" />
@@ -167,9 +183,9 @@ const SLIDER = function () {
             <button class="card-btn">Learn more</button>
           </div>
         `;
-        ul.append(li);
+        carouselList.append(carouselCard);
       })
-      nextList.append(ul);
+      nextList.append(carouselList);
     }
   }
 
@@ -180,7 +196,6 @@ const SLIDER = function () {
   function hideItem(direction) {
     isEnabled = false;
     items[currentItem].classList.add(direction);
-    // console.log(items[currentItem])
     items[currentItem].addEventListener("animationend", function() {
       this.classList.remove("active", direction);
     })
@@ -188,7 +203,6 @@ const SLIDER = function () {
 
   function showItem(direction) {
     items[currentItem].classList.add("next", direction);
-    // console.log(items[currentItem])
     items[currentItem].addEventListener("animationend", function() {
       this.classList.remove("next", direction);
       this.classList.add("active");
@@ -225,9 +239,112 @@ const SLIDER = function () {
       nextItem(currentItem);
     }
   });
+
+  // ============ *// POPUP //* ============== //
+
+  const modalBlackOut = document.createElement("div");
+  modalBlackOut.classList.add("blackout");
+
+  const modal = document.createElement("div");
+  modal.classList.add("modal");
+
+  SHELTER.append(modalBlackOut, modal);
+
+  const addBlackout = () => {
+    const blackout = document.querySelector('.blackout');
+    blackout.classList.add('blackout-show');
+  };
+  const removeBlackout = () => {
+    const blackout = document.querySelector('.blackout');
+    blackout.classList.remove('blackout-show');
+  };
+  const addModalShow = () => {
+    const modal = document.querySelector('.modal');
+    modal.classList.add('modal-show');
+  };
+  const removeModalShow = () => {
+    const modal = getWrapper('.modal');
+    modal.classList.remove('modal-show');
+  };
+  const addBodyVisible = () => {
+    BODY.classList.remove('visible');
+    BODY.classList.add('hidden');
+  };
+  const addBodyHidden = () => {
+    BODY.classList.remove('hidden');
+    BODY.classList.add('visible');
+  };
+
+  const getWrapper = (selector) => {
+    const container = document.querySelector(selector);
+    container && (container.innerHTML = '');
+    return container;
+  };
+  
+  const addCardClickHandler = () => {
+    const cards = document.querySelectorAll('.carousel__card');
+  
+    for (const card of cards) {
+      card.addEventListener('click', (e) => {
+        renderModalWindow(findPet(data, card.dataset.name));
+      });
+    };
+  };
+  
+  const findPet = (data, name) => {
+    return data.find(pet => pet.name === name);
+  };
+
+  function generateModal(petData) {
+    let modalWrapper = document.createElement('div');
+    modalWrapper.className = 'modal-wrapper';
+    modalWrapper.innerHTML = `
+      <img src="${petData.img}" alt="${petData.name}" class="modal__img">
+      <div class="modal-content">
+        <div class="title modal__title">${petData.name}</div>
+        <div class="modal__subtitle">
+        <span>${petData.type}</span> -
+        <span>${petData.breed}</span>
+      </div>
+        <div class="modal__description">${petData.description}</div>
+        <ul class="modal__list">
+          <li class="modal__list-item"><span>Age: </span>${petData.age}</li>
+          <li class="modal__list-item"><span>Inoculations: </span>${petData.inoculations}</li>
+          <li class="modal__list-item"><span>Diseases: </span>${petData.diseases}</li>
+          <li class="modal__list-item"><span>Parasites: </span>${petData.parasites}</li>
+        </ul>
+      </div>
+      <button class="button button_round modal__button"></button>
+    `;
+    return modalWrapper;
+  }
+
+  const renderModalWindow = (petItemData) => {
+    modal.append(generateModal(petItemData));
+    addBlackout();
+    addModalShow();
+    addBodyVisible();
+  
+    const modalBtn = document.querySelector('.modal__button')
+    modalBtn.addEventListener('click', () => {
+      removeBlackout();
+      removeModalShow();
+      addBodyHidden();
+    });
+    const modalBlackout = document.querySelector(".blackout");
+    modalBlackout.addEventListener('click', () => {
+      removeBlackout();
+      removeModalShow();
+      addBodyHidden();
+    });
+  };
+
+  if (data) {
+    addCardClickHandler();
+  };
 }
 
 window.addEventListener("load", () => {
   burgerMenu();
-  SLIDER();
+  CAROUSEL();
 });

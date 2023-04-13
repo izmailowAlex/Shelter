@@ -1,4 +1,5 @@
 const BODY = document.querySelector(".shelter").parentElement;
+const SHELTER = document.querySelector(".shelter");
 const BURGER_BTN = document.querySelector(".burger-menu-button");
 const BURGER_MENU = document.querySelector("#burger");
 const BURGER_MENU_ITEMS = document.querySelectorAll(".burger-nav-item");
@@ -47,18 +48,15 @@ const SLIDER = async function () {
   let data = await response.json();
   
 
-  let carouselWrapper = document.querySelector(".carousel-wrapper"),
+  let sliderWrapper = document.querySelector(".slider-wrapper"),
       currentItem = 0,
-      emptyItem = 0,
       isEnabled = true;
 
-  let dataCopy = [],
-      arrDataList = [];
+  let arrDataList = [];
 
   let page = 1,
       countPages = 0,
       countItemsOnPage = 0,
-      width = true,
       allCountItemsPets = 0;
 
   // ============ RANDOM ============== //
@@ -84,7 +82,7 @@ const SLIDER = async function () {
   const shuffleArr = (arr) => {
     let result = [];
   
-    arr.forEach((e) => {
+    arr.forEach(() => {
       const generateRandomNumber = () => {
         let number = Math.floor(Math.random() * 8);
         if (!result.includes(number) && arr.includes(number)) {
@@ -129,73 +127,66 @@ const SLIDER = async function () {
 
   // ============ *// RANDOM //* ============== //
 
-  const fromDesktopToMobile = window.matchMedia('(max-width:767px)');
-  fromDesktopToMobile.addEventListener('change', (event) => {
-    if (event.matches) {
-      width = false;
-      countItemsOnPage = 3;
-      countPages = 16;
-      console.log(countItemsOnPage, countPages, page)
-      generatePetsData();
-      checkStatusControlBtns(countPages);
-      if (width === false) {
-        containCarouselBlock();
-      };
-    }
-  })
+  const fromDesktopToTablet = window.matchMedia('(max-width:1279px)');
+  const fromTabletToDesktop = window.matchMedia('(min-width: 1280px)');
+  const fromTabletToMobile = window.matchMedia('(max-width:767px)');
+  const fromMobileToTablet = window.matchMedia('(min-width: 768px)');
 
-  const fromDesktopToTablet = window.matchMedia('(min-width: 768px) and (max-width:1279px)');
   fromDesktopToTablet.addEventListener('change', (event) => {
     if (event.matches) {
-      width = false;
       countItemsOnPage = 6;
       countPages = 8;
-      console.log(countItemsOnPage, countPages, page)
+      // console.log(page, countPages, countItemsOnPage, currentItem)
       generatePetsData();
       checkStatusControlBtns(countPages);
-      if (width === false) {
-        containCarouselBlock();
-      };
+      renderSliderBlock();
     }
   })
 
-  const fromDesktopToDesktop = window.matchMedia('(min-width:1280px)');
-  fromDesktopToDesktop.addEventListener('change', (event) => {
+  fromTabletToDesktop.addEventListener('change', (event) => {
     if (event.matches) {
-      width = false;
       countItemsOnPage = 8;
       countPages = 6;
-      console.log(countItemsOnPage, countPages, page)
+      console.log(page, countPages)
+      if (page > countPages) {
+        page = countPages;
+        PAGINATION.innerHTML = page;
+      };
+      // console.log(page, countPages, countItemsOnPage, currentItem)
       generatePetsData();
       checkStatusControlBtns(countPages);
-      if (width === false) {
-        containCarouselBlock();
-      };
+      renderSliderBlock();
     }
   })
 
-  function checkSizeWindow() {
-    if (innerWidth >= 1280) {
-      countPages = 6;
-    }
-    if (innerWidth >= 768 && innerWidth < 1280) {
-      countPages = 8;
-    }
-    if (innerWidth >= 320 && innerWidth < 768) {
+  fromTabletToMobile.addEventListener('change', (event) => {
+    if (event.matches) {
+      countItemsOnPage = 3;
       countPages = 16;
+      // console.log(page, countPages, countItemsOnPage, currentItem)
+      generatePetsData();
+      checkStatusControlBtns(countPages);
+      renderSliderBlock();
     }
-    generatePetsData();
-    // containArrDataList();
-    checkStatusControlBtns(countPages);
-    // console.log(countPages, countItemsOnPage, allCountItemsPets)
-    if (width === false) {
-      console.log("checkSizeWindow: ", width)
-      // console.log(countItemsOnPage, width)
-      containCarouselBlock();
-    };
-  }
+  })
 
-  function settingsWindow() {
+  fromMobileToTablet.addEventListener('change', (event) => {
+    if (event.matches) {
+      countItemsOnPage = 6;
+      countPages = 8;
+      if (page > countPages) {
+        page = countPages;
+        PAGINATION.innerHTML = page;
+      };
+      console.log(page)
+      // console.log(page, countPages, countItemsOnPage, currentItem)
+      generatePetsData();
+      checkStatusControlBtns(countPages);
+      renderSliderBlock();
+    }
+  })
+
+  function reloadPage() {
     switch (true) {
       case window.innerWidth >= 1280:
         countPages = 6;
@@ -209,41 +200,30 @@ const SLIDER = async function () {
     }
     checkStatusControlBtns(countPages);
     generatePetsData();
-    // containArrDataList();
-    // console.log(arrDataList)
     allCountItemsPets = arrDataList.length;
-    // allCountItemsPets = [].concat(...arrDataList).length;
     countItemsOnPage = allCountItemsPets / countPages;
-    // console.log(countItemsOnPage)
-    // checkSizeWindow();
-    if (carouselWrapper.innerHTML == "") {
-      containCarouselBlock();
+    if (sliderWrapper.innerHTML == "") {
+      renderSliderBlock();
     }
   }
-  settingsWindow();
+  reloadPage();
 
-  // function containArrDataList() {
-  //   arrDataList = [];
-  //   for (let i = 0; i < countPages; i++) {
-  //     arrDataList.push([...shuffle()]);
-  //   }
-  // }
-
-  function containCarouselBlock() {
-    carouselWrapper.innerHTML = "";
-    const carouselContainer = document.createElement("div");
-    carouselContainer.classList.add("carousel-container");
+  function renderSliderBlock() {
+    sliderWrapper.innerHTML = "";
+    const sliderContainer = document.createElement("div");
+    sliderContainer.classList.add("slider-container");
     for (let i = 0; i < countPages; i++) {
-      const carouselItem = document.createElement("div");
-      carouselItem.classList.add("carousel-item");
-      if (i === page - 1) carouselItem.classList.add("active");
-      const carouselList = document.createElement("ul");
-      carouselList.classList.add("carousel-list");
+      const sliderItem = document.createElement("div");
+      sliderItem.classList.add("slider-item");
+      if (i === page - 1) sliderItem.classList.add("active");
+      const sliderList = document.createElement("ul");
+      sliderList.classList.add("slider-list");
       for (let i = 0; i < countItemsOnPage; i++) {
-        const item = arrDataList.splice(0, 1)
-        const carouselCard = document.createElement("li");
-        carouselCard.classList.add("carousel__card");
-        carouselCard.innerHTML = `
+        const item = arrDataList.splice(0, 1);
+        const sliderCard = document.createElement("li");
+        sliderCard.classList.add("slider__card");
+        sliderCard.setAttribute("data-name", item[0].name);
+        sliderCard.innerHTML = `
           <div class="card-wrapper">
             <div class="card-img">
               <img class="card-img__image" src="${item[0].img}" alt="card" />
@@ -252,17 +232,16 @@ const SLIDER = async function () {
             <button class="card-btn popup-btn">Learn more</button>
           </div>
         `;
-        carouselList.append(carouselCard);
+        sliderList.append(sliderCard);
       }
-      carouselItem.append(carouselList);
-      carouselContainer.append(carouselItem);
+      sliderItem.append(sliderList);
+      sliderContainer.append(sliderItem);
     }
-    carouselWrapper.append(carouselContainer);
-    width = true;
-    console.log("containCarouselBlock: ", width)
+    sliderWrapper.append(sliderContainer);
+    console.log(currentItem)
   }
 
-  let items = document.querySelectorAll(".carousel-item");
+  let items = document.querySelectorAll(".slider-item");
 
   function changeCurrentItem(n) {
     currentItem = (n + items.length) % items.length;
@@ -280,7 +259,6 @@ const SLIDER = async function () {
 
   function checkStatusControlBtns(x) {
     if (page !== 1 && page !== x) {
-      // console.log('WTF1')
       PAGE_BTN_DBL_LEFT.removeAttribute("disabled");
       PAGE_BTN_LEFT.removeAttribute("disabled");
       PAGE_BTN_RIGHT.removeAttribute("disabled");
@@ -291,7 +269,6 @@ const SLIDER = async function () {
       PAGE_BTN_DBL_RIGHT.firstElementChild.firstElementChild.attributes.fill.value = "#292929";
     }
     if (page === 1) {
-      // console.log('WTF2')
       PAGE_BTN_DBL_LEFT.setAttribute("disabled", true);
       PAGE_BTN_LEFT.setAttribute("disabled", true);
       PAGE_BTN_DBL_LEFT.firstElementChild.firstElementChild.attributes.fill.value = "#CDCDCD";
@@ -304,7 +281,6 @@ const SLIDER = async function () {
       }
     }
     if (page === countPages) {
-      // console.log('WTF3')
       PAGE_BTN_DBL_LEFT.removeAttribute("disabled");
       PAGE_BTN_LEFT.removeAttribute("disabled");
       PAGE_BTN_DBL_LEFT.firstElementChild.firstElementChild.attributes.fill.value = "#292929";
@@ -314,17 +290,10 @@ const SLIDER = async function () {
       PAGE_BTN_DBL_RIGHT.firstElementChild.firstElementChild.attributes.fill.value = "#CDCDCD";
       PAGE_BTN_RIGHT.firstElementChild.firstElementChild.attributes.fill.value = "#CDCDCD";
     }
-    if (page > x) {
-      // console.log('WTF4')
-      containCarouselBlock();
-      page = x;
-      PAGINATION.innerHTML = page;
-    };
   }
 
   function hideItem(direction) {
     isEnabled = false;
-    console.log(items[currentItem])
     items[currentItem].classList.add(direction);
     items[currentItem].addEventListener("animationend", function() {
       this.classList.remove("active", direction);
@@ -340,7 +309,8 @@ const SLIDER = async function () {
     })
   }
 
-  function resetCarousel(n) {
+  function resetSlider(n) {
+    console.log(items[n-1])
     items[n-1].classList.add("active");
     page = n;
     PAGINATION.innerHTML = page;
@@ -352,17 +322,15 @@ const SLIDER = async function () {
     changeCurrentItem(n - 1);
     showItem("from-left");
     DecrementPage();
-    settingsWindow();
+    checkStatusControlBtns(countPages);
   }
 
   function nextItem(n) {
-    console.log("nextItem-start: ", isEnabled)
     hideItem("to-left");
     changeCurrentItem(n + 1);
     showItem("from-right");
     incrementPage();
-    settingsWindow();
-    console.log("nextItem-end: ", isEnabled)
+    checkStatusControlBtns(countPages);
   }
 
   document.querySelector(".control-btn-left").addEventListener("click", function() {
@@ -381,7 +349,7 @@ const SLIDER = async function () {
     if (isEnabled) {
       items[currentItem].classList.remove("active");
       changeCurrentItem(0);
-      resetCarousel(1);
+      resetSlider(1);
     }
   });
 
@@ -389,23 +357,115 @@ const SLIDER = async function () {
     if (isEnabled) {
       items[currentItem].classList.remove("active");
       changeCurrentItem(countPages - 1);
-      resetCarousel(countPages);
+      resetSlider(countPages);
     }
   });
 
-  // window.addEventListener(`resize`, () => {
-  //   width = false;
-  //   checkSizeWindow();
-  // }, true);
-};
+  // ============ *// POPUP //* ============== //
 
-const Popup = function () {
-  const LEARN_MORE_BUTTONS = document.querySelectorAll(".popup-btn");
-  // console.log(LEARN_MORE_BUTTONS)
-}
+  const modalBlackOut = document.createElement("div");
+  modalBlackOut.classList.add("blackout");
+
+  const modal = document.createElement("div");
+  modal.classList.add("modal");
+
+  SHELTER.append(modalBlackOut, modal);
+
+  const addBlackout = () => {
+    const blackout = document.querySelector('.blackout');
+    blackout.classList.add('blackout-show');
+  };
+  const removeBlackout = () => {
+    const blackout = document.querySelector('.blackout');
+    blackout.classList.remove('blackout-show');
+  };
+  const addModalShow = () => {
+    const modal = document.querySelector('.modal');
+    modal.classList.add('modal-show');
+  };
+  const removeModalShow = () => {
+    const modal = getWrapper('.modal');
+    modal.classList.remove('modal-show');
+  };
+  const addBodyVisible = () => {
+    BODY.classList.remove('visible');
+    BODY.classList.add('hidden');
+  };
+  const addBodyHidden = () => {
+    BODY.classList.remove('hidden');
+    BODY.classList.add('visible');
+  };
+
+  const getWrapper = (selector) => {
+    const container = document.querySelector(selector);
+    container && (container.innerHTML = '');
+    return container;
+  };
+  
+  const addCardClickHandler = () => {
+    const cards = document.querySelectorAll('.slider__card');
+  
+    for (const card of cards) {
+      card.addEventListener('click', (e) => {
+        renderModalWindow(findPet(data, card.dataset.name));
+      });
+    };
+  };
+  
+  const findPet = (data, name) => {
+    return data.find(pet => pet.name === name);
+  };
+
+  function generateModal(petData) {
+    let modalWrapper = document.createElement('div');
+    modalWrapper.className = 'modal-wrapper';
+    modalWrapper.innerHTML = `
+      <img src="${petData.img}" alt="${petData.name}" class="modal__img">
+      <div class="modal-content">
+        <div class="title modal__title">${petData.name}</div>
+        <div class="modal__subtitle">
+        <span>${petData.type}</span> -
+        <span>${petData.breed}</span>
+      </div>
+        <div class="modal__description">${petData.description}</div>
+        <ul class="modal__list">
+          <li class="modal__list-item"><span>Age: </span>${petData.age}</li>
+          <li class="modal__list-item"><span>Inoculations: </span>${petData.inoculations}</li>
+          <li class="modal__list-item"><span>Diseases: </span>${petData.diseases}</li>
+          <li class="modal__list-item"><span>Parasites: </span>${petData.parasites}</li>
+        </ul>
+      </div>
+      <button class="button button_round modal__button"></button>
+    `;
+    return modalWrapper;
+  }
+
+  const renderModalWindow = (petItemData) => {
+    modal.append(generateModal(petItemData));
+    addBlackout();
+    addModalShow();
+    addBodyVisible();
+  
+    const modalBtn = document.querySelector('.modal__button')
+    modalBtn.addEventListener('click', () => {
+      removeBlackout();
+      removeModalShow();
+      addBodyHidden();
+    });
+    const modalBlackout = document.querySelector(".blackout");
+    modalBlackout.addEventListener('click', () => {
+      removeBlackout();
+      removeModalShow();
+      addBodyHidden();
+    });
+  };
+
+  if (data) {
+    addCardClickHandler();
+  };
+};
 
 window.addEventListener("load", () => {
   burgerMenu();
   SLIDER();
-  Popup();
 });
