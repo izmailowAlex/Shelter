@@ -183,6 +183,17 @@ const CAROUSEL = async function () {
             <button class="card-btn">Learn more</button>
           </div>
         `;
+        carouselCard.addEventListener("click", (e) => {
+          console.log(e.currentTarget.dataset.name)
+          renderModalWindow(findPet(data, e.currentTarget.dataset.name));
+          // const cards = document.querySelectorAll('.carousel__card');
+  
+          // for (const card of cards) {
+          //   card.addEventListener('click', (e) => {
+          //     renderModalWindow(findPet(data, card.dataset.name));
+          //   });
+          // };
+        })
         carouselList.append(carouselCard);
       })
       nextList.append(carouselList);
