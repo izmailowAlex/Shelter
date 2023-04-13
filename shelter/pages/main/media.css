@@ -262,6 +262,44 @@
     position: static;
   }
 
+  /* -------  MODAL  --------------------- */
+
+  .modal-wrapper {
+    width: 630px;
+    height: 350px;
+  }
+
+  .modal__img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .modal-content {
+    font-size: 13px;
+    padding: 13px 5px 0 11px;
+  }
+
+  .modal__title {
+    margin-bottom: 8px;
+  }
+
+  .modal__subtitle {
+    margin-bottom: 21px;
+  }
+
+  .modal__description {
+    line-height: 110%;
+  }
+
+  .modal__list {
+    margin-top: 20px;
+  }
+
+  .modal__list-item {
+    margin-bottom: 9px;
+    letter-spacing: 0.15em;
+  }
+
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -671,6 +709,43 @@
     height: 269px;
     background-image: url(./../../assets/images/footer-puppy-320.svg);
     position: static;
+  }
+
+  /* -------  MODAL  --------------------- */
+
+  .modal-wrapper {
+    width: 240px;
+    height: auto;
+  }
+
+  .modal__img {
+    display: none;
+  }
+
+  .modal-content {
+    font-size: 13px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .modal__title {
+    font-size: 35px;
+    line-height: 45.5px;
+    margin-bottom: 10px;
+  }
+
+  .modal__subtitle {
+    margin-bottom: 20px;
+    line-height: 23px;
+  }
+
+  .modal__description {
+    text-align: justify;
+  }
+
+  .modal__list {
+    margin-top: 18px;
+    text-align: left;
   }
 
 }
