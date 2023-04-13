@@ -232,13 +232,16 @@ const SLIDER = async function () {
             <button class="card-btn popup-btn">Learn more</button>
           </div>
         `;
+        sliderCard.addEventListener("click", (e) => {
+          console.log("popup")
+          renderModalWindow(findPet(data, e.currentTarget.dataset.name));
+        })
         sliderList.append(sliderCard);
       }
       sliderItem.append(sliderList);
       sliderContainer.append(sliderItem);
     }
     sliderWrapper.append(sliderContainer);
-    console.log(currentItem)
   }
 
   let items = document.querySelectorAll(".slider-item");
@@ -402,15 +405,15 @@ const SLIDER = async function () {
     return container;
   };
   
-  const addCardClickHandler = () => {
-    const cards = document.querySelectorAll('.slider__card');
+  // const addCardClickHandler = () => {
+  //   const cards = document.querySelectorAll('.slider__card');
   
-    for (const card of cards) {
-      card.addEventListener('click', (e) => {
-        renderModalWindow(findPet(data, card.dataset.name));
-      });
-    };
-  };
+  //   for (const card of cards) {
+  //     card.addEventListener('click', (e) => {
+  //       renderModalWindow(findPet(data, card.dataset.name));
+  //     });
+  //   };
+  // };
   
   const findPet = (data, name) => {
     return data.find(pet => pet.name === name);
@@ -460,9 +463,9 @@ const SLIDER = async function () {
     });
   };
 
-  if (data) {
-    addCardClickHandler();
-  };
+  // if (data) {
+  //   addCardClickHandler();
+  // };
 };
 
 window.addEventListener("load", () => {
