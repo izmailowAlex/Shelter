@@ -183,6 +183,10 @@ const CAROUSEL = async function () {
             <button class="card-btn">Learn more</button>
           </div>
         `;
+        carouselCard.addEventListener("click", (e) => {
+          console.log(e.currentTarget.dataset.name)
+          renderModalWindow(findPet(data, e.currentTarget.dataset.name));
+        })
         carouselList.append(carouselCard);
       })
       nextList.append(carouselList);
