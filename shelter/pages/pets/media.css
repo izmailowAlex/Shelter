@@ -32,27 +32,22 @@
     opacity: 1;
   }
 
-  .carousel {
+  .slider {
     gap: 39px;
   }
 
-  .carousel-wrapper {
+  .slider-wrapper {
     width: 580px;
     overflow: hidden;
   }
 
-  .carousel-list {
+  .slider-list {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
 
-  .carousel__card:nth-child(n+7) {
+  .slider__card:nth-child(n+7) {
     display: none;
-  }
-
-  .pets-navigation {
-    transform: translate(0, 0);
-    opacity: 1;
   }
 
   /* -------  Footer  --------------------- */
@@ -104,6 +99,44 @@
     background-image: url(./../../assets/images/footer-puppy.svg);
     background-repeat: no-repeat;
     position: static;
+  }
+
+  /* -------  MODAL  --------------------- */
+
+  .modal-wrapper {
+    width: 630px;
+    height: 350px;
+  }
+
+  .modal__img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .modal-content {
+    font-size: 13px;
+    padding: 13px 5px 0 11px;
+  }
+
+  .modal__title {
+    margin-bottom: 8px;
+  }
+
+  .modal__subtitle {
+    margin-bottom: 21px;
+  }
+
+  .modal__description {
+    line-height: 110%;
+  }
+
+  .modal__list {
+    margin-top: 20px;
+  }
+
+  .modal__list-item {
+    margin-bottom: 9px;
+    letter-spacing: 0.15em;
   }
 
 }
@@ -168,29 +201,27 @@
     opacity: 1;
   }
 
-  .carousel {
+  .slider {
     flex-direction: column;
     gap: 42px;
   }
 
-  .carousel-wrapper {
+  .slider-wrapper {
     width: 270px;
     overflow: hidden;
   }
 
-  .carousel-list {
+  .slider-list {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
   }
 
-  .carousel__card:nth-child(n+4) {
+  .slider__card:nth-child(n+4) {
     display: none;
   }
 
   .pets-control {
     gap: 10px;
-    transform: translate(0, 0);
-    opacity: 1;
   }
 
   /* -------  Footer  --------------------- */
@@ -246,6 +277,43 @@
     height: 269px;
     background-image: url(./../../assets/images/footer-puppy-320.svg);
     position: static;
+  }
+
+  /* -------  MODAL  --------------------- */
+
+  .modal-wrapper {
+    width: 240px;
+    height: auto;
+  }
+
+  .modal__img {
+    display: none;
+  }
+
+  .modal-content {
+    font-size: 13px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .modal__title {
+    font-size: 35px;
+    line-height: 45.5px;
+    margin-bottom: 10px;
+  }
+
+  .modal__subtitle {
+    margin-bottom: 20px;
+    line-height: 23px;
+  }
+
+  .modal__description {
+    text-align: justify;
+  }
+
+  .modal__list {
+    margin-top: 18px;
+    text-align: left;
   }
 
 }
