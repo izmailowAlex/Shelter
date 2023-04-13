@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./../../assets/icons/pet-house.png"
+      type="image/x-icon"
+    />
+    <title>Shelter pets page</title>
+    <link rel="stylesheet" href="./../../src/spinner/spinner.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./media.css" />
+  </head>
+  <body class="_loading visible">
+    <div class="mod">
+      <div class="spinner"></div>
+    </div>
+
+    <div class="shelter">
+      <header class="header _animation-item">
+        <div class="header-container">
+          <div class="header-logo">
+            <a class="header-logo-link" href="./../main/index.html">
+              <h1 class="logo-title">Cozy House</h1>
+              <span class="logo-subtitle">Shelter for pets in Boston</span>
+            </a>
+          </div>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a class="nav-item__link" href="./../main/index.html"
+                  >About the shelter</a
+                >
+              </li>
+              <li class="nav-item nav-item-active">
+                <a class="nav-item__link">Our pets</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-item__link" href="./../main/index.html#pets"
+                  >Help the shelter</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-item__link" href="#contacts">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="burger-menu" id="burger">
+            <div class="burger-menu-button">
+              <span class="burger-menu-lines"></span>
+            </div>
+            <nav class="burger-nav">
+              <ul class="burger-nav-list">
+                <li class="burger-nav-item">
+                  <a class="burger-nav-item-link" href="./../main/index.html">About the shelter</a>
+                </li>
+                <li class="burger-nav-item burger-nav-item-active">
+                  <a class="burger-nav-item-link"
+                    >Our pets</a
+                  >
+                </li>
+                <li class="burger-nav-item">
+                  <a class="burger-nav-item-link" href="./../main/index.html#pets"
+                    >Help the shelter</a
+                  >
+                </li>
+                <li class="burger-nav-item">
+                  <a class="burger-nav-item-link" href="#contacts">Contacts</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="overlay"></div>
+          </div>
+        </div>
+      </header>
+      <section class="pets container" id="pets">
+        <div class="pets-container">
+          <h3 class="pets__title _animation-item">
+            <span>Our friends who</span>
+            <span>are looking for a house</span>
+          </h3>
+          <div class="slider">
+            <div class="slider-wrapper"></div>
+            <div class="pets-control">
+              <button class="control-btn control-btn-db-left" disabled>
+                <svg
+                  width="25"
+                  height="11"
+                  viewBox="0 0 25 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.94687 10.7852L0.913671 6.08789V4.98438L9.94687 0.287109V1.625L2.43711 5.53125L9.94687 9.44727V10.7852ZM24.018 10.7852L14.9848 6.08789V4.98438L24.018 0.287109V1.625L16.5082 5.53125L24.018 9.44727V10.7852Z"
+                    fill="#CDCDCD"
+                  />
+                </svg>
+              </button>
+              <button class="control-btn control-btn-left" disabled>
+                <svg
+                  width="10"
+                  height="11"
+                  viewBox="0 0 10 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.98242 10.7852L0.949219 6.08789V4.98438L9.98242 0.287109V1.625L2.47266 5.53125L9.98242 9.44727V10.7852Z"
+                    fill="#CDCDCD"
+                  />
+                </svg>
+              </button>
+              <button class="control-btn-center">1</button>
+              <button class="control-btn control-btn-right">
+                <svg
+                  width="10"
+                  height="11"
+                  viewBox="0 0 10 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="right"
+                    d="M9.04102 6.08789L0.0078125 10.7852V9.44727L7.51758 5.53125L0.0078125 1.625V0.287109L9.04102 4.98438V6.08789Z"
+                    fill="#292929"
+                  />
+                </svg>
+              </button>
+              <button class="control-btn control-btn-db-right">
+                <svg
+                  width="25"
+                  height="11"
+                  viewBox="0 0 25 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    id="dbl_right"
+                    d="M10.0055 6.08789L0.972265 10.7852V9.44727L8.48203 5.53125L0.972265 1.625V0.287109L10.0055 4.98438V6.08789ZM24.0766 6.08789L15.0434 10.7852V9.44727L22.5531 5.53125L15.0434 1.625V0.287109L24.0766 4.98438V6.08789Z"
+                    fill="#292929"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer container" id="contacts">
+        <div class="footer-container">
+          <div class="item-ft contacts">
+            <h3 class="item-ft__title">For questions and suggestions</h3>
+            <div class="item-ft-wrapper">
+              <a
+                class="item-ft-row item-ft-row__link"
+                href="https://accounts.google.com/"
+                target="_blank"
+              >
+                <div class="item-ft-img image-email"></div>
+                <div class="item-ft-text">email@shelter.com</div>
+              </a>
+            </div>
+            <div class="item-ft-wrapper">
+              <a
+                class="item-ft-row item-ft-row__link"
+                href="https://play.google.com/store/apps/details?id=com.simplemobiletools.dialer&hl=ru&gl=US&pli=1"
+                target="_blank"
+              >
+                <div class="item-ft-img image-phone"></div>
+                <div class="item-ft-text">+13 674 567 75 54</div>
+              </a>
+            </div>
+          </div>
+          <div class="item-ft location">
+            <h3 class="item-ft__title">We are waiting for your visit</h3>
+            <div class="item-ft-wrapper">
+              <a
+                class="item-ft-row item-ft-row__link"
+                href="https://www.google.com/maps/place/%D0%91%D0%BE%D1%81%D1%82%D0%BE%D0%BD,+%D0%9C%D0%B0%D1%81%D1%81%D0%B0%D1%87%D1%83%D1%81%D0%B5%D1%82%D1%81,+%D0%A1%D0%A8%D0%90/@42.3145186,-71.1103696,11z/data=!3m1!4b1!4m6!3m5!1s0x89e3652d0d3d311b:0x787cbf240162e8a0!8m2!3d42.3600825!4d-71.0588801!16zL20vMDFjeF8"
+                target="_blank"
+              >
+                <div class="item-ft-img image-location"></div>
+                <div class="item-ft-text text-wrap">
+                  <span>1 Central Street, Boston</span
+                  ><span> (entrance from the store)</span>
+                </div>
+              </a>
+            </div>
+            <div class="item-ft-wrapper">
+              <a
+                class="item-ft-row item-ft-row__link"
+                href="https://www.google.com/maps/place/%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F/@51.5287352,-0.3817835,10z/data=!3m1!4b1!4m6!3m5!1s0x47d8a00baf21de75:0x52963a5addd52a99!8m2!3d51.5072178!4d-0.1275862!16zL20vMDRqcGw"
+                target="_blank"
+              >
+                <div class="item-ft-img image-location"></div>
+                <div class="item-ft-text">18 South Park, London</div>
+              </a>
+            </div>
+          </div>
+          <div class="footer-img">
+            <div class="footer-img__image"></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./../../src/animation/animation.js"></script>
+  </body>
+</html>
