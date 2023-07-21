@@ -4,7 +4,7 @@ const BURGER_BTN = document.querySelector(".burger-menu-button");
 const BURGER_MENU = document.querySelector("#burger");
 const BURGER_MENU_ITEMS = document.querySelectorAll(".burger-nav-item");
 const OVERLAY = document.querySelector(".overlay");
-const PAGINATION = document.querySelector(".control-btn-center");
+const PAGINATION_BTN = document.querySelector(".control-btn-center");
 const PAGE_BTN_DBL_LEFT = document.querySelector(".control-btn-db-left");
 const PAGE_BTN_LEFT = document.querySelector(".control-btn-left");
 const PAGE_BTN_RIGHT = document.querySelector(".control-btn-right");
@@ -136,9 +136,9 @@ const SLIDER = async function () {
     if (event.matches) {
       countItemsOnPage = 6;
       countPages = 8;
-      console.log(event.matches)
-      // console.log(page, countPages, countItemsOnPage, currentItem)
-      sliderRenderingBasics();
+      generatePetsData();
+      changeCurrentItem(page - 1);
+      checkStatusControlBtns(countPages);
       renderSliderBlock();
     }
   })
@@ -149,10 +149,11 @@ const SLIDER = async function () {
       countPages = 6;
       if (page > countPages) {
         page = countPages;
-        PAGINATION.innerHTML = page;
+        PAGINATION_BTN.innerHTML = page;
       };
-      // console.log(page, countPages, countItemsOnPage, currentItem)
-      sliderRenderingBasics();
+      generatePetsData();
+      changeCurrentItem(page - 1);
+      checkStatusControlBtns(countPages);
       renderSliderBlock();
     }
   })
@@ -161,8 +162,9 @@ const SLIDER = async function () {
     if (event.matches) {
       countItemsOnPage = 3;
       countPages = 16;
-      // console.log(page, countPages, countItemsOnPage, currentItem)
-      sliderRenderingBasics();
+      generatePetsData();
+      changeCurrentItem(page - 1);
+      checkStatusControlBtns(countPages);
       renderSliderBlock();
     }
   })
@@ -173,11 +175,11 @@ const SLIDER = async function () {
       countPages = 8;
       if (page > countPages) {
         page = countPages;
-        PAGINATION.innerHTML = page;
+        PAGINATION_BTN.innerHTML = page;
       };
-      // console.log(page)
-      // console.log(page, countPages, countItemsOnPage, currentItem)
-      sliderRenderingBasics();
+      generatePetsData();
+      changeCurrentItem(page - 1);
+      checkStatusControlBtns(countPages);
       renderSliderBlock();
     }
   })
@@ -194,7 +196,8 @@ const SLIDER = async function () {
         countPages = 16;
       break;
     }
-    sliderRenderingBasics();
+    generatePetsData();
+    checkStatusControlBtns(countPages);
     allCountItemsPets = arrDataList.length;
     countItemsOnPage = allCountItemsPets / countPages;
     if (sliderWrapper.innerHTML == "") {
@@ -202,11 +205,6 @@ const SLIDER = async function () {
     }
   }
   reloadPage();
-
-  function sliderRenderingBasics() {
-    generatePetsData();
-    checkStatusControlBtns(countPages);
-  }
 
   function renderSliderBlock() {
     sliderWrapper.innerHTML = "";
@@ -233,7 +231,6 @@ const SLIDER = async function () {
           </div>
         `;
         sliderCard.addEventListener("click", (e) => {
-          console.log("popup")
           renderModalWindow(findPet(data, e.currentTarget.dataset.name));
         })
         sliderList.append(sliderCard);
@@ -252,12 +249,12 @@ const SLIDER = async function () {
 
   function incrementPage() {
     page++;
-    PAGINATION.innerHTML = page;
+    PAGINATION_BTN.innerHTML = page;
   }
 
   function DecrementPage() {
     page--;
-    PAGINATION.innerHTML = page;
+    PAGINATION_BTN.innerHTML = page;
   }
 
   function checkStatusControlBtns(x) {
@@ -297,14 +294,15 @@ const SLIDER = async function () {
 
   function hideItem(direction) {
     isEnabled = false;
+    items = document.querySelectorAll(".slider-item");
     items[currentItem].classList.add(direction);
     items[currentItem].addEventListener("animationend", function() {
-      console.log(this)
       this.classList.remove("active", direction);
     })
   }
 
   function showItem(direction) {
+    items = document.querySelectorAll(".slider-item");
     items[currentItem].classList.add("next", direction);
     items[currentItem].addEventListener("animationend", function() {
       this.classList.remove("next", direction);
@@ -314,9 +312,10 @@ const SLIDER = async function () {
   }
 
   function resetSlider(n) {
+    items = document.querySelectorAll(".slider-item");
     items[n-1].classList.add("active");
     page = n;
-    PAGINATION.innerHTML = page;
+    PAGINATION_BTN.innerHTML = page;
     checkStatusControlBtns(page)
   }
 
