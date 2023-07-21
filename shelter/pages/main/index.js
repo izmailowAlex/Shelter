@@ -103,12 +103,12 @@ const CAROUSEL = async function () {
   const generatePetsData = () => {
     const seed = generateSeed();
     let petsData = [];
-    let dataInterfacePaginationRandomArr = [];
-    for (let i = 0; i < 6; i++) {
-      dataInterfacePaginationRandomArr.push(generateRandomArr(seed))
-      dataInterfacePaginationRandomArr = dataInterfacePaginationRandomArr.flat(3)
-    };
-    dataInterfacePaginationRandomArr.forEach(e => {
+    // let dataInterfacePaginationRandomArr = [];
+    // for (let i = 0; i < 6; i++) {
+    //   dataInterfacePaginationRandomArr.push(generateRandomArr(seed))
+    //   dataInterfacePaginationRandomArr = dataInterfacePaginationRandomArr.flat(3)
+    // };
+    generateRandomArr(seed).forEach(e => {
       petsData.push(data[e]);
     });
     arrDataList = petsData;
@@ -158,6 +158,7 @@ const CAROUSEL = async function () {
 
   function changeCurrentItem(n) {
     currentItem = (n + items.length) % items.length;
+    console.log(currentItem)
   }
 
   function changeEmptyItem(n) {
