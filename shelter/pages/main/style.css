@@ -46,7 +46,7 @@ h3 {
 }
 
 .btn__link {
-  color: #000 !important;
+  color: #f00 !important;
   text-decoration: none;
   padding: 15px 0;
   font-family: var(--font-georgia);
