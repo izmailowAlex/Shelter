@@ -346,6 +346,99 @@ const CAROUSEL = async function () {
   if (data) {
     addCardClickHandler();
   };
+
+  const SWIPE_DETECT = (el) => {
+  
+    let surface = el;
+    let startX = 0;
+    let startY = 0;
+    let distX = 0;
+    let distY = 0;
+  
+    let startTime = 0;
+    let elapseTime = 0;
+  
+    let threshold = 150;
+    let restraint = 100;
+    let allowedTime = 400;
+  
+    surface.addEventListener("mousedown", function(e) {
+      startX = e.pageX;
+      startY = e.pageY;
+      startTime = new Date().getTime();
+      e.preventDefault();
+    });
+  
+    surface.addEventListener("mouseup", function(e) {
+      distX = e.pageX - startX;
+      distY = e.pageY - startY;
+      elapseTime = new Date().getTime() - startTime;
+  
+      if (elapseTime <= allowedTime) {
+        if (Math.abs(distX) >= threshold && Math.abs(distY) <= threshold) {
+          if (distX > 0) {
+            if (isEnabled) {
+              previousItem(currentItem);
+            }
+          } else {
+            if (isEnabled) {
+              nextItem(currentItem);
+            }
+          }
+        }
+      }
+      e.preventDefault();
+    });
+  
+    surface.addEventListener("touchstart", function(e) {
+      if (e.target.classList.contains("carousel__btn")) {
+        if (e.target.classList.contains("btn-arrow-left")) {
+          if (isEnabled) {
+            previousItem(currentItem);
+          }
+        } else if (e.target.classList.contains("btn-arrow-right")){
+          if (isEnabled) {
+            nextItem(currentItem);
+          }
+        }
+      }
+
+      let touchObj = e.changedTouches[0];
+      startX = touchObj.pageX;
+      startY = touchObj.pageY;
+      startTime = new Date().getTime();
+      e.preventDefault();
+    });
+  
+    surface.addEventListener("touchmove", function(e) {
+      e.preventDefault();
+    });
+  
+    surface.addEventListener("touchend", function(e) {
+      let touchObj = e.changedTouches[0];
+      distX = touchObj.pageX - startX;
+      distY = touchObj.pageY - startY;
+      elapseTime = new Date().getTime() - startTime;
+  
+      if (elapseTime <= allowedTime) {
+        if (Math.abs(distX) >= threshold && Math.abs(distY) <= threshold) {
+          if (distX > 0) {
+            if (isEnabled) {
+              previousItem(currentItem);
+            }
+          } else {
+            if (isEnabled) {
+              nextItem(currentItem);
+            }
+          }
+        }
+      }
+      e.preventDefault();
+    });
+  };
+  
+  let el = document.querySelector(".carousel");
+  SWIPE_DETECT(el);
 }
 
 window.addEventListener("load", () => {
