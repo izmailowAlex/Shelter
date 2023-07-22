@@ -437,6 +437,7 @@ h3 {
   letter-spacing: 0.06em;
   border-radius: 100px;
   border: 2px solid var(--primary);
+  color: var(--black) !important;
   background: transparent;
   transition: all .3s ease-in-out;
   cursor: pointer;
